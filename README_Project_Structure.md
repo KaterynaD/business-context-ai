@@ -60,9 +60,9 @@ The current `demoed-business-context` Skill belongs under the appropriate Plugin
 
 Only reviewed, ready-to-use content should be copied or promoted from `workbench/` into `plugins/`.
 
-### `mcp/`
+### `metricflow_mcp/`
 
-Reserved for MCP servers and related production-ready MCP components intended for ChatGPT use.
+MCP servers and related production-ready MCP components intended for ChatGPT use.
 
 Development notes, experiments, prompts, and helper scripts should remain in `workbench/` until they are ready to become part of an MCP implementation.
 
@@ -91,7 +91,7 @@ All new work should begin in `workbench/`.
 Once content or code is reviewed and ready for use, move or copy the final version into the appropriate ChatGPT-facing destination:
 
 - Skill or Plugin content → `plugins/`
-- MCP server content → `mcp/`
+- MCP server content → `metricflow_mcp/`
 - ChatGPT/OpenAI configuration or marketplace metadata → `.agents/`
 
 ## Current scope
@@ -106,5 +106,5 @@ When editing this repository:
 
 1. Make changes in `workbench/`.
 2. Review and test the result.
-3. Promote only finalized content to `plugins/`, `mcp/`, or `.agents/`.
+3. Promote only finalized content to `plugins/`, `metricflow_mcp/`, or `.agents/`.
 4. Keep ChatGPT-facing folders clean and free of drafts, raw material, and temporary files.
