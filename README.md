@@ -117,4 +117,4 @@ Both setup guides describe a **local Python MCP server using `stdio`**. Adapt th
 
 
 
-**Portfolio emphasis:** business ontology  semantic modeling  dbt MetricFlow  MCP / FastMCP  Python  SQL  Amazon Redshift  AI agents  business rules  data quality
+**Portfolio emphasis:** business ontology semantic modeling dbt MetricFlow MCP / FastMCP Python SQL Amazon Redshift AI agents business rules data quality
