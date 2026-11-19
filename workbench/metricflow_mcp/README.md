@@ -115,4 +115,4 @@ python -m pytest test_metricflow_query.py -v
 - Parameterize the database profile/account view for portability.
 - Audit return sizes, data masking, and role-based access before exposing this to broader users.
 
-See the [main README](../../README.md) for architecture and the [demo README](../../docs/demo/README.md) for end-to-end examples.
+See the [main README](../../README.md) for architecture and the [demo README](../../demo/README.md) for end-to-end examples.

@@ -1,110 +1,120 @@
-# lcom-plugins
+# Business Context for AI: Ontology + dbt Semantic Layer + MCP
 
-This repository is the working home for Learning.com context used by ChatGPT.
+> A practical prototype for answering business questions with **documented business meaning** and **governed metrics**, rather than asking an AI agent to guess from warehouse tables.
 
-Its current primary deliverable is the **`lcom-business-context` Skill**, which provides curated business knowledge such as ontology definitions, glossary content, and business rules. The repository is intentionally structured so that additional **Skills**, **Plugins**, and/or  **MCP servers** can be added later.
+This project explores a simple question: **What does an AI assistant need to understand about a business before it can answer questions about that business's data?**
 
-## Repository purpose
+The prototype brings together:
 
-Use this repository to:
+1. **Business ontology and glossary**  concepts, relationships, business rules, exceptions, and source-of-truth guidance.
+2. **Agent Skill**  routes questions to the relevant domain knowledge and tells the agent how to interpret it.
+3. **dbt Semantic Layer / MetricFlow**  provides reusable metric definitions and compiles metric requests into SQL.
+4. **Python MCP server**  exposes validated metric queries and structured account lookup tools to AI clients.
+5. **Codex Desktop and Codex in VS Code**  consume the business context and MCP tools to investigate accounts, explain metrics, and visualize relationships.
 
-- develop and maintain Learning.com business knowledge for AI use;
-- create and test ontology, glossary, prompts, and supporting business context;
-- maintain scripts and other tooling used to prepare or validate that knowledge;
-- publish finished Skills, Plugins, and MCP components in locations intended for ChatGPT.
+## Why this matters
 
-## Repository structure
+A data warehouse can show that an organization has product licenses, product usage, and zero ARR. But those facts alone do **not** establish whether the organization is a counted as a customer.
 
-```text
-lcom-business-context/
-├── README.md
-├── workbench/
-├── plugins/
-├── mcp/
-└── .agents/
+For example, an educational district may consume products funded by a state-level agreement. A useful AI answer must distinguish **who pays**, **who receives access**, **who uses the product**, and **which entity is counted as a customer**.
+
+This prototype supplies those rules as explicit context and retrieves actual metric values separately. It aims to reduce confident but incorrect interpretations of business data.
+
+## Architecture
+
+```mermaid
+flowchart TD
+    U[Business question] --> C[Codex Desktop / Codex in VS Code]
+    I[AGENTS.md: agent instructions] --> C
+    K[Business Knowledge Skill] --> C
+    O[Ontology, glossary, rules, source authority] --> K
+    C --> M[Python FastMCP server: lcom_metrics]
+    M --> A[get_account: structured account context]
+    M --> Q[run_metricflow_query: validated metric request]
+    A --> V[Redshift: conformed account view]
+    Q --> MF[MetricFlow / dbt Semantic Layer]
+    MF --> DW[Redshift warehouse]
+    V --> C
+    DW --> MF
+    MF --> M
+    M --> C
 ```
 
-### `workbench/`
+**Separation of responsibility:** the ontology explains what concepts mean; MetricFlow defines and computes metrics; MCP offers controlled tools; Codex interprets the user request and combines results.
 
-`workbench/` is the main working area for humans.
+The ontology in this repository is maintained as **Markdown business-domain documentation with relationship diagrams**, not an OWL/RDF ontology or independently deployed graph database. Account-specific knowledge graphs in the demos are generated from documented relationships and retrieved facts.
 
-Keep all development and maintenance material here, including:
+## What is implemented
 
-- raw source material;
-- ontology and business-knowledge drafts;
-- prompts;
-- Python maintenance scripts;
-- test questions and expected results;
-- notes and design documents;
-- intermediate or generated files that are not part of a final ChatGPT component.
+| Component | Responsibility | Code / documentation |
+|---|---|---|
+| Business Knowledge Skill | Topic routing, source precedence, ontology-aware reasoning | [SKILL.md](plugins/lcom-business-context/skills/lcom-business-context/SKILL.md) |
+| Ontology | Account, Contract, License, Product, User, Usage, Support, Training, and related relationships | [ontology/](plugins/lcom-business-context/skills/lcom-business-context/ontology/) |
+| Business glossary | Common terms and reporting definitions | [business_glossary.md](plugins/lcom-business-context/skills/lcom-business-context/knowledge/business_glossary.md) |
+| ARR reference | Differences among True, Preliminary, and Backdated ARR | [annual_recurring_revenue_arr_knowledge.md](plugins/lcom-business-context/skills/lcom-business-context/knowledge/annual_recurring_revenue_arr_knowledge.md) |
+| Cross-domain context | Authority, source-system differences, data-quality limitations | [business_context.md](plugins/lcom-business-context/skills/lcom-business-context/knowledge/business_context.md) |
+| MCP server | FastMCP tools, validation, MetricFlow calls, account lookup | [metricflow_mcp.py](workbench/metricflow_mcp/metricflow_mcp.py) |
+| MCP regression tests | Valid/invalid query contract checks using an available dbt/warehouse environment | [test_metricflow_query.py](workbench/metricflow_mcp/test_metricflow_query.py) |
+| Codex instructions | Direct the agent to use ontology and MCP rather than inventing metric names or business rules | [AGENTS.md](AGENTS.md) |
 
-Example:
+The metric definitions themselves are supplied by a connected dbt project; **the original dbt warehouse project and its data are not bundled here**. Consequently, cloning this repository alone is not sufficient to reproduce queries against the original environment.
 
-```text
-workbench/
-├── raw/
-├── drafts/
-├── prompts/
-├── scripts/
-├── tests/
-└── docs/
-```
+## Example: what counts as a customer?
 
-Files in `workbench/` are not considered final ChatGPT deliverables.
+**Question:** "Does this district count as a current customer if its students use the product but its ARR is zero?"
 
-### `plugins/`
+The agent should:
 
-Reserved for final Plugin content intended for ChatGPT.
+1. Read the documented definition of *Customer* and the distinction between operational and commercial account hierarchies.
+2. Identify the requested organization using `get_account` (and disambiguate similar names, if necessary).
+3. Retrieve the relevant metrics through `get_metrics`, `get_dimensions`, and `run_metricflow_query`.
+4. Explain the distinction between an organization using the product and an ultimate-parent organization contributing nonzero active-contract ARR.
+5. State what is known and what remains unresolved instead of inventing a payer relationship.
 
-The current `lcom-business-context` Skill belongs under the appropriate Plugin structure here. Additional Skills or Plugins may be added later.
+The crucial improvement is **business interpretation**, not merely generating SQL.
 
-Only reviewed, ready-to-use content should be copied or promoted from `workbench/` into `plugins/`.
+## Demo walkthroughs
 
-### `mcp/`
+See **[AI-assisted business analysis: annotated demos](demo/README.md)** for examples and a proposed screenshot gallery:
 
-Reserved for MCP servers and related production-ready MCP components intended for ChatGPT use.
+- Customer definition vs. licenses and usage
+- Account discovery and operational/commercial hierarchies
+- Account-specific knowledge graphs
+- ARR trends and metric exploration
+- Name ambiguity, evaluation accounts
 
-Development notes, experiments, prompts, and helper scripts should remain in `workbench/` until they are ready to become part of an MCP implementation.
 
-### `.agents/`
 
-Reserved for ChatGPT/OpenAI agent configuration and Plugin marketplace metadata.
+## MCP tools
 
-Do not use this folder for general documentation, drafts, or maintenance files.
+The Python server exposes:
 
-## Working principle
+| Tool | What it does |
+|---|---|
+| `get_metrics` | Discovers available MetricFlow metrics |
+| `get_dimensions` | Discovers valid dimensions for a selected metric |
+| `get_state_codes` / `get_countries` | Provides controlled values for geographic filters |
+| `run_metricflow_query` | Validates a query request and executes it through MetricFlow |
+| `get_account` | Looks up a conformed account; returns candidate matches or structured account context |
 
-The repository follows a simple separation:
+Detailed implementation and environment requirements: [MCP server README](workbench/metricflow_mcp/README.md).
 
-```text
-workbench/
-    = where humans create, investigate, draft, test, and maintain
+## Using with Codex
 
-plugins/
-mcp/
-.agents/
-    = where finalized ChatGPT-facing components live
-```
+- [Codex Desktop + local MCP setup](README_Codex_Desktop_MCP.md)
+- [Codex VS Code extension + local MCP setup](README_Codex_VSCode_MCP_Setup.md)
+- [Repository agent instructions](AGENTS.md)
 
-All new work should begin in `workbench/`.
+Both setup guides describe a **local Python MCP server using `stdio`**. Adapt the paths to your machine and use your own authorized data environment. Never commit credentials or local `.env` files.
 
-Once content or code is reviewed and ready for use, move or copy the final version into the appropriate ChatGPT-facing destination:
+## Scope and limitations
 
-- Skill or Plugin content → `plugins/`
-- MCP server content → `mcp/`
-- ChatGPT/OpenAI configuration or marketplace metadata → `.agents/`
+- This is a **working prototype and documentation case study**, not a hosted application or an independently runnable demo warehouse.
+- The knowledge sources include deliberate ambiguity and known data-quality issues; the agent should preserve those uncertainties rather than invent conclusions.
+- The MCP server uses a direct warehouse account lookup as well as MetricFlow queries. Not every value is retrieved through the same interface.
+- The current code uses fixed allowed state/country lists and a query-result cap; the account-matching flow can require user clarification.
+- The regression tests cover valid/invalid query outcomes, **not numeric reconciliation of metrics**.
 
-## Current scope
 
-The repository currently focuses on the **`lcom-business-context` Skill**, including business ontology and curated business knowledge.
 
-The structure is designed to support future expansion without requiring a new repository for every capability. Additional Skills, Plugins, MCP servers, and supporting AI components can be added as the project grows.
-
-## Maintenance guideline
-
-When editing this repository:
-
-1. Make changes in `workbench/`.
-2. Review and test the result.
-3. Promote only finalized content to `plugins/`, `mcp/`, or `.agents/`.
-4. Keep ChatGPT-facing folders clean and free of drafts, raw material, and temporary files.
+**Portfolio emphasis:** business ontology  semantic modeling  dbt MetricFlow  MCP / FastMCP  Python  SQL  Amazon Redshift  AI agents  business rules  data quality
