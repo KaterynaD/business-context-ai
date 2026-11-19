@@ -1,4 +1,5 @@
-# DemoEd dbt Semantic Layer (MetricFlow)
+# DemoEd dbt Semantic Layer
+
 
 > Technical documentation for the **`dbt_semantic`** project built using dbt 1.12.5 over the DemoEd enterprise data warehouse. This README documents the SQL models, semantic definitions, metrics, dimensions, custom calendar, and local MetricFlow CLI, but not the data warehouse models.
 >
