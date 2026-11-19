@@ -83,6 +83,12 @@ See **[AI-assisted business analysis: annotated demos](demo/README.md)** for exa
 - ARR trends and metric exploration
 - Name ambiguity, evaluation accounts
 
+## dbt Semantic Layer / MetricFlow implementation
+
+The  `dbt_semantic` project runs on Redshift and defines seven dbt views (`vws_account`, `vws_arr_account`, `vws_licenses_account`, `vws_launches_account`, `vws_completions_account`, `vws_month`, `vws_calendar`) and 13 MetricFlow metrics covering ARR variants, licensing, launches, active users, and completions. It includes a custom July - June fiscal calendar and daily/monthly time spines.
+
+See [dbt Semantic Layer](workbench/dbt_semantic/README.md) for the full technical inventory and tested `mf` command examples.
+
 
 
 ## MCP tools
