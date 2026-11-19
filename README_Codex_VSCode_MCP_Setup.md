@@ -87,7 +87,7 @@ semantic/
 Example `.env`:
 
 ```text
-DBT_PROJECT_DIR=C:\Users\<user>\Development\dbt\LCom_DW
+DBT_PROJECT_DIR=C:\Users\<user>\Development\dbt\demoed_DW
 DBT_PROFILES_DIR=C:\Users\<user>\.dbt
 DBT_TARGET=dev
 ```
@@ -142,7 +142,7 @@ Add a configuration block for the MCP server.
 Example:
 
 ```toml
-[mcp_servers.lcom_metrics]
+[mcp_servers.demoed_metrics]
 command = 'C:\FULL\PATH\TO\.venv\Scripts\python.exe'
 args = ['C:\FULL\PATH\TO\semantic\metricflow_mcp.py']
 cwd = 'C:\FULL\PATH\TO\semantic'
@@ -160,7 +160,7 @@ Using single quotes in TOML is convenient on Windows because backslashes do not 
 For example:
 
 ```toml
-[mcp_servers.lcom_metrics]
+[mcp_servers.demoed_metrics]
 command = 'C:\Users\<user>\Development\project\.venv\Scripts\python.exe'
 args = ['C:\Users\<user>\Development\project\semantic\metricflow_mcp.py']
 cwd = 'C:\Users\<user>\Development\project\semantic'
@@ -173,7 +173,7 @@ tool_timeout_sec = 120
 
 ### Configuration fields
 
-- `mcp_servers.lcom_metrics` — MCP server name visible to Codex.
+- `mcp_servers.demoed_metrics` — MCP server name visible to Codex.
 - `command` — Python executable used to start the server.
 - `args` — path to the MCP server Python file.
 - `cwd` — working directory used when the MCP process starts.
@@ -207,7 +207,7 @@ The configured MCP server should appear in the list.
 Example:
 
 ```text
-lcom_metrics    enabled
+demoed_metrics    enabled
 ```
 
 You can also inspect the MCP servers from the Codex extension UI.
@@ -227,7 +227,7 @@ get_metrics
 ask Codex:
 
 ```text
-Use the lcom_metrics MCP server and tell me which metrics are available.
+Use the demoed_metrics MCP server and tell me which metrics are available.
 ```
 
 Codex should call the MCP tool instead of generating SQL or guessing metric names.
@@ -254,7 +254,7 @@ Example:
 
 ```text
 What was ARR for California in June 2026?
-Use the lcom_metrics MCP tools, not SQL.
+Use the demoed_metrics MCP tools, not SQL.
 ```
 
 A typical tool sequence can be:
@@ -284,10 +284,10 @@ Example:
 ```markdown
 # Codex Instructions
 
-## Learning.com Metrics
+## DemoEd.com Metrics
 
-For questions requiring Learning.com business metric values, use the
-`lcom_metrics` MCP server instead of generating SQL.
+For questions requiring DemoEd.com business metric values, use the
+`demoed_metrics` MCP server instead of generating SQL.
 
 Before querying:
 
@@ -340,7 +340,7 @@ For example:
         ↓
 Codex understands the business question
         ↓
-AGENTS.md tells Codex to use lcom_metrics
+AGENTS.md tells Codex to use demoed_metrics
         ↓
 Skill provides business meaning of ARR
         ↓

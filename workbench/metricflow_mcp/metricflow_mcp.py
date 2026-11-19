@@ -32,7 +32,7 @@ DBT_TARGET = os.environ["DBT_TARGET"]
 # MCP Server
 # =========================================================
 
-mcp = FastMCP("LCom Metrics Server")
+mcp = FastMCP("demoed Metrics Server")
 
 MAX_QUERY_LIMIT = 100
 # =========================================================
@@ -123,12 +123,12 @@ def account_query(
         with open(profiles_path, "r", encoding="utf-8") as f:
             profiles = yaml.safe_load(f)
 
-        profile = profiles["LCom_DW"]
+        profile = profiles["demoed_DW"]
 
         if DBT_TARGET not in profile["outputs"]:
             raise QueryValidationError(
                 f"DBT target '{DBT_TARGET}' was not found "
-                f"in profile 'LCom_DW'."
+                f"in profile 'demoed_DW'."
             )
 
         target_config = profile["outputs"][DBT_TARGET]
@@ -197,18 +197,18 @@ def account_query(
                 sfdc_ultimate_parent_id,
                 sfdc_ultimate_parent_account,
 
-                lcom_organization_id,
-                lcom_organization_name,
-                lcom_organization_type,
-                lcom_parent_organization_id,
-                lcom_parent_organization_name,
-                lcom_nces_id,
-                lcom_external_sis_id,
+                demoed_organization_id,
+                demoed_organization_name,
+                demoed_organization_type,
+                demoed_parent_organization_id,
+                demoed_parent_organization_name,
+                demoed_nces_id,
+                demoed_external_sis_id,
 
                 state_initiative,
                 sfdc_state_program_eligible,
-                lcom_trial,
-                lcom_demo,
+                demoed_trial,
+                demoed_demo,
 
                 has_product_licenses,
                 has_product_usage,
@@ -385,21 +385,21 @@ def account_query(
                             row["sfdc_ultimate_parent_account"],
                     },
 
-                    "lcom": {
+                    "demoed": {
                         "organization_id":
-                            row["lcom_organization_id"],
+                            row["demoed_organization_id"],
                         "organization_name":
-                            row["lcom_organization_name"],
+                            row["demoed_organization_name"],
                         "organization_type":
-                            row["lcom_organization_type"],
+                            row["demoed_organization_type"],
                         "parent_organization_id":
-                            row["lcom_parent_organization_id"],
+                            row["demoed_parent_organization_id"],
                         "parent_organization_name":
-                            row["lcom_parent_organization_name"],
+                            row["demoed_parent_organization_name"],
                         "nces_id":
-                            row["lcom_nces_id"],
+                            row["demoed_nces_id"],
                         "external_sis_id":
-                            row["lcom_external_sis_id"],
+                            row["demoed_external_sis_id"],
                     },
                 },
 
@@ -409,9 +409,9 @@ def account_query(
                     "state_program_eligible":
                         row["sfdc_state_program_eligible"],
                     "trial":
-                        row["lcom_trial"],
+                        row["demoed_trial"],
                     "demo":
-                        row["lcom_demo"],
+                        row["demoed_demo"],
                 },
 
                 "product_activity": {

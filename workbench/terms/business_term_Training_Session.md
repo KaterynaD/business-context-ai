@@ -1,6 +1,6 @@
 # Training Session
 
-A **Training Session** is a Learning.com professional training activity. It records the training being planned or delivered, including who requested and delivers it, the topics covered, attendance and implementation information, and post-training feedback.
+A **Training Session** is a DemoEd.com professional training activity. It records the training being planned or delivered, including who requested and delivers it, the topics covered, attendance and implementation information, and post-training feedback.
 
 The Account associated with the Training Session is not always the Account that paid for it. For example, a District or Customer may purchase training that is delivered through separate Training Sessions for individual Schools. Training is paid for through an Opportunity, but the Training Session does not have a direct relationship to that Opportunity in the available data.
 

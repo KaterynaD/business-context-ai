@@ -2,7 +2,7 @@
 
 ## Definition
 
-A **Training Session** is a Learning.com professional training activity recorded in the Salesforce Training Session object. It represents a planned or delivered training engagement for an Account and captures the people responsible for it, the training content, timing and delivery details, attendance-related information, implementation context, and post-training feedback.
+A **Training Session** is a DemoEd.com professional training activity recorded in the Salesforce Training Session object. It represents a planned or delivered training engagement for an Account and captures the people responsible for it, the training content, timing and delivery details, attendance-related information, implementation context, and post-training feedback.
 
 A Training Session is a business activity, not necessarily a direct representation of the commercial transaction that pays for it. Training may be purchased by one Account, such as a District or Customer, but delivered for one or more different Accounts, such as individual Schools. The Salesforce Training Session data does not define a direct relationship to the Opportunity used to pay for the training.
 
@@ -42,7 +42,7 @@ An Opportunity associated with a higher-level Account, such as a District or Cus
 - A Training Session may be requested by a CSM, initially assigned to a professional services or training group, and later reassigned to a specific professional training employee.
 - A Training Session can cover multiple Topics.
 - Training Session information can include timing, location, participation method, contacts, attendance, training classification, implementation information, notes, and post-training observations.
-- Grade-related information describes the grade levels relevant to the training material or Learning.com products being discussed or implemented. It should not automatically be interpreted as a precise record of the actual grades represented by attendees.
+- Grade-related information describes the grade levels relevant to the training material or DemoEd.com products being discussed or implemented. It should not automatically be interpreted as a precise record of the actual grades represented by attendees.
 - Training Session attributes are populated manually in Salesforce.
 - Because the information is manually entered, values may be incomplete, inconsistent, or interpreted differently by different users.
 - Post-training survey information stored on a Training Session is also manually maintained.
@@ -74,7 +74,7 @@ An Opportunity associated with a higher-level Account, such as a District or Cus
 - **Professional Training Employee / Trainer** — the individual professional training employee assigned to deliver or manage the Training Session.
 - **Opportunity** — the commercial transaction used to pay for training. The business relationship exists even though a direct Training Session-to-Opportunity relationship is not defined in the available data.
 - **Training Session Topic** — a Topic covered by a Training Session. One Training Session may cover multiple Topics.
-- **Learning.com Product** — training material may relate to Learning.com products and the grade levels relevant to those products.
+- **DemoEd.com Product** — training material may relate to DemoEd.com products and the grade levels relevant to those products.
 - **SurveyMonkey Survey Response** — feedback collected through a general survey and manually matched and copied into the relevant Training Session record.
 
 ## Ontology Diagram
@@ -91,7 +91,7 @@ flowchart LR
     ACCOUNT[Associated Account<br/>School / District / Customer / other Account]
     TOPIC1[Training Session Topic]
     TOPIC2[Training Session Topic]
-    MATERIAL[Training Material /<br/>Learning.com Product]
+    MATERIAL[Training Material /<br/>DemoEd.com Product]
     SURVEY[General Survey Responses]
 
     CSM -->|requests| TS

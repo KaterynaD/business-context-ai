@@ -4,7 +4,7 @@ A **Contract / Opportunity** represents a commercial transaction or potential co
 
 Contracts are commonly annual, but they may also be shorter-term with annualized revenue or multi-year. Renewal relationships represent commercial continuity but are not always complete or one-to-one. 
 
-If a renewal is still pending, the existing contract may remain active past its End Date to allow early access to LCom Platform.
+If a renewal is still pending, the existing contract may remain active past its End Date to allow early access to demoed Platform.
 
 Backdated opportunities are common when Invoiced Date is after Start Date.
 

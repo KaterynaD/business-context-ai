@@ -3,7 +3,7 @@
 ## Systems and Sources of Authority
 
 - Salesforce is the current master system for commercial information.
-- LCom Platform is the primary source for operational organization hierarchy,
+- demoed Platform is the primary source for operational organization hierarchy,
   licensing, users, and product usage.
 - HubSpot is the originating master system for some ECommerce transactions.
 - NetSuite contains financial/order information and was the primary commercial
@@ -11,7 +11,7 @@
 - HubSpot and NetSuite information is loaded into Salesforce but may be overriten in Salesforce 
 - Salesforce information is loaded in HubSpot and NetSuite. It might be used partially in the processes, how exactly is unknown.
 - Enterprise data warehouse combine commercial information (Salesforce) and operational organization hierarchy,
-  licensing, users, and product usage (LCom Platform) in a conformed system.
+  licensing, users, and product usage (demoed Platform) in a conformed system.
 
 ## Business Governance
 

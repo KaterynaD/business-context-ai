@@ -1,14 +1,14 @@
 {
-  "name": "learning-com-plugins",
+  "name": "DemoEd-com-plugins",
   "interface": {
-    "displayName": "Learning.com Plugins"
+    "displayName": "DemoEd.com Plugins"
   },
   "plugins": [
     {
-      "name": "lcom-business-context",
+      "name": "demoed-business-context",
       "source": {
         "source": "local",
-        "path": "./plugins/lcom-business-context"
+        "path": "./plugins/demoed-business-context"
       }
     }
   ]

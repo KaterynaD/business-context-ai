@@ -20,8 +20,8 @@ on case when m.mon_lastday<trunc(GETDATE()) then m.mon_lastday else trunc(GETDAT
 --on m.mon_lastday between flo.startdate and flo.expirationdate
 join {{ source('common', 'dim_account') }} a
 on flo.organization_district_id = a.account_id
-where a.lcom_trial=false 
-and a.lcom_demo=false
+where a.demoed_trial=false 
+and a.demoed_demo=false
 and flo.valid='Y'
 and flo.enforcedaterestrictions='y'
 )

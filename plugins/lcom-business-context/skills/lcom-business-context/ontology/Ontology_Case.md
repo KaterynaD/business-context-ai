@@ -67,7 +67,7 @@ However, it does not define:
 - who assigns or maintains them;
 - whether their definitions have changed over time.
 
-These classifications should therefore not be given Learning.com-specific interpretations without an additional authoritative source.
+These classifications should therefore not be given DemoEd.com-specific interpretations without an additional authoritative source.
 
 ### Status and Closed indicator
 

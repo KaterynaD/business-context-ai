@@ -1,6 +1,6 @@
 CSM (Customer Success Manager)
 
-A Customer Success Manager (CSM) is a person who helps LCom Customers get the most value out of the LCom Platform.
+A Customer Success Manager (CSM) is a person who helps demoed Customers get the most value out of the demoed Platform.
 
 Account Owner: Represents the primary rep responsible for the overall customer account relationship.
 

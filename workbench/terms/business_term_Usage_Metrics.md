@@ -1,6 +1,6 @@
 # Usage Metrics
 
-Usage metrics summarize User activity in the LCom Platform since the start of the school year.
+Usage metrics summarize User activity in the demoed Platform since the start of the school year.
 
 - **Active Users** — unique students, teachers, and district coordinators with at least one Launch.
 - **Launches** — unique Launch events.

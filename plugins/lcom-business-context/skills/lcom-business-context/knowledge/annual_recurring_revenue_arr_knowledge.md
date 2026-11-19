@@ -2,7 +2,7 @@
 
 ## Definition
 
-**Annual Recurring Revenue (ARR)** is the expected recurring revenue Learning.com expects to receive from customers for providing recurring products or services on an annual, 12-month basis.
+**Annual Recurring Revenue (ARR)** is the expected recurring revenue DemoEd.com expects to receive from customers for providing recurring products or services on an annual, 12-month basis.
 
 In business reporting, ARR represents the recurring contractual value that is active in a reporting period. It is not simply the recurring portion of a Deal at the time the Deal is sold. The ARR framework determines when recurring value becomes active, how it continues or changes across renewals, when it is reduced or removed, and how those changes should be explained month by month.
 

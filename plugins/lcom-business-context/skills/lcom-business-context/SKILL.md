@@ -1,24 +1,24 @@
 ---
-name: learning-com-business-knowledge
+name: DemoEd-com-business-knowledge
 description: >
-  Use Learning.com's internal business knowledge files to answer questions about
+  Use DemoEd.com's internal business knowledge files to answer questions about
   business concepts, terminology, relationships, reporting definitions, and documented
   business rules for Accounts, Customers, Contacts, Opportunities, Deals, ARR,
   Products, licensing, Users, Usage, Training Sessions, Cases, and related concepts.
 ---
 
-# Learning.com Business Knowledge
+# DemoEd.com Business Knowledge
 
 ## Purpose
 
-Use this skill for questions that require Learning.com-specific business knowledge.
+Use this skill for questions that require DemoEd.com-specific business knowledge.
 
 The files in this skill are the authoritative knowledge available to the agent for the
 business concepts they describe. Prefer these files over general knowledge or assumptions
 about how Salesforce, HubSpot, NetSuite, educational organizations, contracts, licensing,
 products, or usage would normally work.
 
-Do not invent missing Learning.com business rules.
+Do not invent missing DemoEd.com business rules.
 
 ## Knowledge Sources
 
@@ -113,7 +113,7 @@ Use the following routing as a starting point.
 | Product meaning, Salesforce Product, SKU, Lesson, Sequence, Product Category | `ontology/Ontology_Product.md` |
 | License Order, License Provisioning, early access, backdated licensing | `ontology/Ontology_License_Order.md` |
 | User identity, User ID, school/district association, PII reporting scope | `ontology/Ontology_User.md` |
-| Usage events, Launches, Completions, Learning Item groupings, non-additive users | `ontology/Ontology_Usage.md` |
+| Usage events, Launches, Completions, DemoEd Item groupings, non-additive users | `ontology/Ontology_Usage.md` |
 | Training Session, trainer assignment, training topics, survey handling, paying vs receiving Account | `ontology/Ontology_Training_Session.md` |
 | Salesforce Case, support classifications, ownership, lifecycle | `ontology/Ontology_Case.md` |
 
@@ -125,14 +125,14 @@ Customer may require `ontology/Ontology_Product.md`, `ontology/Ontology_Usage.md
 ### Account Knowledge Graph
 
 When the user asks about a specific Account / Organization, use the
-`lcom_metrics` MCP server together with `ontology/Ontology_Account.md`.
+`demoed_metrics` MCP server together with `ontology/Ontology_Account.md`.
 
 1. Use `get_account` to identify the specific Account and retrieve its
    current Account context.
 
 2. Use `ontology/Ontology_Account.md` to interpret the returned attributes
    and relationships. The ontology defines the meaning of Account,
-   District, Customer, Salesforce Account, LCom Organization, ownership,
+   District, Customer, Salesforce Account, demoed Organization, ownership,
    licensing, usage, commercial activity, support, training, and program
    relationships.
 
@@ -140,7 +140,7 @@ When the user asks about a specific Account / Organization, use the
    schema/business semantics for that instance.
 
 4. When the question requires actual metric values, use the corresponding
-   metric through `lcom_metrics` and attach those values to the Account
+   metric through `demoed_metrics` and attach those values to the Account
    context.
 
 5. Build an Account knowledge graph by combining:
@@ -160,15 +160,15 @@ When the user asks about a specific Account / Organization, use the
 
 ## Reasoning Rules
 
-### Ground answers in documented Learning.com knowledge
+### Ground answers in documented DemoEd.com knowledge
 
-For Learning.com-specific questions:
+For DemoEd.com-specific questions:
 
 - use the supplied knowledge files before relying on general business or software knowledge;
 - preserve the terminology used in the knowledge files;
 - distinguish documented facts from reasonable inference;
 - do not convert an inference into a business rule;
-- do not assume that a familiar Salesforce or SaaS convention applies at Learning.com unless
+- do not assume that a familiar Salesforce or SaaS convention applies at DemoEd.com unless
   the knowledge files support it.
 
 ### Preserve ambiguity
@@ -204,13 +204,13 @@ Use the documented Account / Organization rules.
 
 Keep documented distinctions when they matter, including:
 
-- Account / Organization vs. Customer / Ultimate Parent vs. LCom Customer;
+- Account / Organization vs. Customer / Ultimate Parent vs. demoed Customer;
 - Opportunity vs. Active Contract;
 - Opportunity / Contract vs. Opportunity Line Item / Deal;
 - Booking vs. Revenue vs. ARR vs. Opportunity / Deal ARR vs. NRR;
 - ARR economic concept vs. ARR Class on an Opportunity Line Item;
 - License Provisioning vs. Active Users;
-- Salesforce Product vs. LCom SKU vs. Product Category vs. Sequence;
+- Salesforce Product vs. demoed SKU vs. Product Category vs. Sequence;
 - Usage event vs. derived Usage metrics.
 
 ### Treat manual and historical processes explicitly
@@ -260,7 +260,7 @@ For requests to create or revise business knowledge:
 
 ## Missing Knowledge
 
-If the available files do not contain enough information to answer a Learning.com-specific
+If the available files do not contain enough information to answer a DemoEd.com-specific
 question:
 
 1. say what is known from the existing knowledge;
@@ -272,12 +272,12 @@ question:
 
 ### Metric Value Queries
 
-For questions asking for actual Learning.com metric values, use the
-`lcom_metrics` MCP server.
+For questions asking for actual DemoEd.com metric values, use the
+`demoed_metrics` MCP server.
 
 Use the business knowledge files to determine which business metric the
 question refers to, then use the corresponding MetricFlow metric through
-`lcom_metrics` MCP server.
+`demoed_metrics` MCP server.
 
 Metric mapping:
 
@@ -298,7 +298,7 @@ Metric mapping:
 Do not calculate or infer actual metric values from the static business
 knowledge files.
 
-Use the `lcom_metrics` MCP server to obtain current supported metrics, dimensions,
+Use the `demoed_metrics` MCP server to obtain current supported metrics, dimensions,
 controlled dimension values, and query results.
 
 If a requested business concept does not have a documented metric mapping,

@@ -1,6 +1,6 @@
 Contracts
 
-Contracts are originated in Salesforce as opportunities or HubSpot deals, integrated into NetSuite as orders and LCom Platform as license orders.
+Contracts are originated in Salesforce as opportunities or HubSpot deals, integrated into NetSuite as orders and demoed Platform as license orders.
 
 They have owner, Start and End dates, account at any role of the hierarchy school or district, and may have up to 3 contacts.
 
@@ -54,7 +54,7 @@ It's a normal practise to have backdated opportunities where Start Date is in a 
 Opportunities line items (individual deals) inherit Opportunity  Stage, Start, End, Invoiced, Close dates, Owner but have its own class, unit price, list price,
 salesforce product, total amount (Biz Dev, ARR or NRR depending on class), quantity (number of students in License Orders) and discounts.
 
-Salesforce product is different from LCom product SKU and there is many-to-many relations between them.
+Salesforce product is different from demoed product SKU and there is many-to-many relations between them.
 The product can be the same or different in a renewal opportunity but belong to the same product type when there is a new product is designed
 replacing an aged old one. 
 An individual product of the same type can be created for a specific state customer, district or commercial customer if needed.

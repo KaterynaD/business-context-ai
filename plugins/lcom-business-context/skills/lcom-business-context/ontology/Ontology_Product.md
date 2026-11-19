@@ -2,11 +2,11 @@
 
 ## Definition
 
-**Product** is a commonly used business concept for LCom offerings, but it does not currently have one conformed definition across business systems, licensing, learning content, and reporting.
+**Product** is a commonly used business concept for demoed offerings, but it does not currently have one conformed definition across business systems, licensing, DemoEd content, and reporting.
 
-At the content level, the fundamental learning item is a **Lesson**. Lessons are grouped into **SKUs**, which are the units licensed in the LCom Platform. Licensed lessons are then made available through **Sequences** and a **Default Pathway**. Users may also create **Custom Sequences** from available learning content.
+At the content level, the fundamental DemoEd item is a **Lesson**. Lessons are grouped into **SKUs**, which are the units licensed in the demoed Platform. Licensed lessons are then made available through **Sequences** and a **Default Pathway**. Users may also create **Custom Sequences** from available DemoEd content.
 
-The commercial process uses a different product structure. Salesforce Opportunities contain **Opportunity Line Items / Deals** associated with Salesforce Products and the quantity purchased. This information is used to create **License Orders** in the LCom Platform, where licensing is represented by SKUs and the number of students provisioned. Because Salesforce Products and SKUs represent different stages and purposes in this process, their relationship is many-to-many rather than a one-to-one product mapping.
+The commercial process uses a different product structure. Salesforce Opportunities contain **Opportunity Line Items / Deals** associated with Salesforce Products and the quantity purchased. This information is used to create **License Orders** in the demoed Platform, where licensing is represented by SKUs and the number of students provisioned. Because Salesforce Products and SKUs represent different stages and purposes in this process, their relationship is many-to-many rather than a one-to-one product mapping.
 
 HubSpot and NetSuite also maintain their own Product definitions, synchronized with Salesforce Products.
 
@@ -38,10 +38,10 @@ These names are business-facing concepts rather than guaranteed identifiers of a
 ## Relationships
 
 - **composed_of → Lesson**  
-  Learning content is fundamentally made up of individual lessons.
+  DemoEd content is fundamentally made up of individual lessons.
 
 - **grouped_into → SKU**  
-  Lessons are grouped into SKUs for licensing in the LCom Platform.
+  Lessons are grouped into SKUs for licensing in the demoed Platform.
 
 - **many_to_many → SKU**  
   Lessons and SKUs have a many-to-many relationship: a SKU can include multiple lessons, and a lesson can participate in multiple SKUs.
@@ -50,10 +50,10 @@ These names are business-facing concepts rather than guaranteed identifiers of a
   Lessons available through licensed SKUs can be organized and delivered through sequences.
 
 - **distributed_through → Default Pathway**  
-  Licensed learning content can also be delivered through the default pathway.
+  Licensed DemoEd content can also be delivered through the default pathway.
 
 - **distributed_through → Custom Sequence**  
-  Users can create custom sequences from learning content available to them.
+  Users can create custom sequences from DemoEd content available to them.
 
 - **many_to_many → Sequence**  
   Lessons, SKUs, and sequences participate in many-to-many relationships.
@@ -62,16 +62,16 @@ These names are business-facing concepts rather than guaranteed identifiers of a
   Salesforce Products are associated with Salesforce Opportunity Line Items representing what is sold.
 
 - **drives_provisioning_of → License Order**  
-  Salesforce Opportunities and their Opportunity Line Items provide the commercial basis for creating License Orders in the LCom Platform.
+  Salesforce Opportunities and their Opportunity Line Items provide the commercial basis for creating License Orders in the demoed Platform.
 
 - **uses → SKU**  
-  License Orders use SKUs to determine which learning content is licensed.
+  License Orders use SKUs to determine which DemoEd content is licensed.
 
 - **specifies → Licensing Provisioning / Number of Students**  
   License Orders include the number of students to be provisioned for licensed access.
 
 - **many_to_many → SKU**  
-  Salesforce Products and LCom Platform SKUs have a many-to-many relationship. A commercial Product does not map directly to a single licensing SKU.
+  Salesforce Products and demoed Platform SKUs have a many-to-many relationship. A commercial Product does not map directly to a single licensing SKU.
 
 - **synchronized_with → HubSpot Product**  
   HubSpot maintains its own Product definition synchronized with Salesforce Products.
@@ -87,31 +87,31 @@ These names are business-facing concepts rather than guaranteed identifiers of a
 
 ## Business Rules
 
-- A **Lesson** is the base learning-content unit.
+- A **Lesson** is the base DemoEd-content unit.
 
-- Only **SKUs** are licensed in the LCom Platform.
+- Only **SKUs** are licensed in the demoed Platform.
 
 - Sequences and the Default Pathway are ways of organizing and delivering lessons from licensed content; they are not independently sold or licensed products.
 
-- Users can create their own Custom Sequences from learning content available to them.
+- Users can create their own Custom Sequences from DemoEd content available to them.
 
 - Salesforce Opportunities contain Opportunity Line Items associated with Salesforce Products and purchased quantities.
 
-- The commercial information represented by Salesforce Opportunities and Opportunity Line Items is used to create License Orders in the LCom Platform.
+- The commercial information represented by Salesforce Opportunities and Opportunity Line Items is used to create License Orders in the demoed Platform.
 
 - License Orders use SKUs and the number of students to represent licensing provisioning.
 
-- Salesforce Products and LCom Platform SKUs have a many-to-many relationship and should not be treated as equivalent concepts.
+- Salesforce Products and demoed Platform SKUs have a many-to-many relationship and should not be treated as equivalent concepts.
 
 - There is no direct relationship between Salesforce Products and individual Lessons.
 
-- Salesforce Products and SKUs can be created specifically for a particular state or LCom Customer.
+- Salesforce Products and SKUs can be created specifically for a particular state or demoed Customer.
 
 - HubSpot and NetSuite maintain their own Product definitions, synchronized with Salesforce Products.
 
-- **Product Categories** were created for reporting usage according to commonly used product names. They do not exist as Product Categories in the LCom Platform.
+- **Product Categories** were created for reporting usage according to commonly used product names. They do not exist as Product Categories in the demoed Platform.
 
-- Product Categories are manually maintained classifications of Learning Items. A Learning Item may belong to more than one Product Category.
+- Product Categories are manually maintained classifications of DemoEd Items. A DemoEd Item may belong to more than one Product Category.
 
 - Product Categories are therefore not mutually exclusive, and usage measures aggregated across Product Categories are not necessarily additive.
 
@@ -123,15 +123,15 @@ These names are business-facing concepts rather than guaranteed identifiers of a
 
 - Usage cannot be reported directly by Salesforce Product.
 
-- Although a Learning Item may be associated with one or more SKUs, an individual Usage event does not identify which licensed SKU actually provided access to that Learning Item. As a result, Usage cannot be reliably attributed to a specific active licensed SKU or to the Salesforce Product behind that license.
+- Although a DemoEd Item may be associated with one or more SKUs, an individual Usage event does not identify which licensed SKU actually provided access to that DemoEd Item. As a result, Usage cannot be reliably attributed to a specific active licensed SKU or to the Salesforce Product behind that license.
 
 - **Salesforce Sub Family** is the closest commercial aggregation level to some commonly recognized product groupings, but it is less granular than usage Product Categories.
 
 - One Salesforce Sub Family may combine several business Product Categories.
 
-- Salesforce also contains Sub Families for products sold by LCom whose usage is not provided through the LCom Platform, including products acquired from other companies.
+- Salesforce also contains Sub Families for products sold by demoed whose usage is not provided through the demoed Platform, including products acquired from other companies.
 
-- Therefore, Salesforce Sub Family is not equivalent to an LCom usage Product Category and cannot be used as a direct replacement for it.
+- Therefore, Salesforce Sub Family is not equivalent to an demoed usage Product Category and cannot be used as a direct replacement for it.
 
 ## Ambiguities
 
@@ -169,7 +169,7 @@ A **Sequence** may therefore be perceived by a business user as part of a Produc
 
 The sales process and licensing process describe the offering differently.
 
-Salesforce records what was sold using Products, Opportunity Line Items, and purchased quantities. The LCom Platform provisions access using License Orders, SKUs, and numbers of students.
+Salesforce records what was sold using Products, Opportunity Line Items, and purchased quantities. The demoed Platform provisions access using License Orders, SKUs, and numbers of students.
 
 The conversion from the commercial representation to the licensing representation is not one-to-one.
 
@@ -179,9 +179,9 @@ Revenue and usage do not currently share a conformed product hierarchy.
 
 The Salesforce Product structure supports commercial and revenue reporting but does not directly identify the lessons whose usage should be attributed to the product.
 
-Although Learning Items can be associated with SKUs, an individual Usage event does not identify which purchased or licensed SKU provided access to the Learning Item. Therefore, Usage cannot be reliably traced from an individual Usage event back to a specific active licensed SKU or Salesforce Product.
+Although DemoEd Items can be associated with SKUs, an individual Usage event does not identify which purchased or licensed SKU provided access to the DemoEd Item. Therefore, Usage cannot be reliably traced from an individual Usage event back to a specific active licensed SKU or Salesforce Product.
 
-The usage Product Category structure groups learning activity into familiar business product names, but those categories do not represent the commercial products used for revenue reporting. Product Categories are manually maintained and may overlap because the same Learning Item can belong to more than one category, so usage totals across Product Categories are not necessarily additive.
+The usage Product Category structure groups DemoEd activity into familiar business product names, but those categories do not represent the commercial products used for revenue reporting. Product Categories are manually maintained and may overlap because the same DemoEd Item can belong to more than one category, so usage totals across Product Categories are not necessarily additive.
 
 Therefore, a request such as **"revenue and usage by product"** is ambiguous unless the intended Product definition and acceptable mapping between the two perspectives are established.
 
@@ -193,27 +193,27 @@ Exact Salesforce Product equality is therefore insufficient to determine whether
 
 ### Salesforce Sub Family
 
-Salesforce Sub Family provides a broader commercial grouping than the Product Categories used for LCom Platform usage.
+Salesforce Sub Family provides a broader commercial grouping than the Product Categories used for demoed Platform usage.
 
-A single Sub Family may contain several usage Product Categories. Salesforce also contains Sub Families representing products sold by LCom whose usage is not delivered or captured through the LCom Platform.
+A single Sub Family may contain several usage Product Categories. Salesforce also contains Sub Families representing products sold by demoed whose usage is not delivered or captured through the demoed Platform.
 
 For this reason, Sub Family cannot serve as a direct conformed product grouping between revenue and platform usage.
 
 ## Related Terms
 
-- **Lesson / Learning Item** — the fundamental unit of learning content.
-- **SKU** — the unit through which learning content is licensed in the LCom Platform.
-- **Sequence** — an ordered organization of lessons used to distribute licensed learning content.
-- **Custom Sequence** — a sequence created by users from learning content available to them.
+- **Lesson / DemoEd Item** — the fundamental unit of DemoEd content.
+- **SKU** — the unit through which DemoEd content is licensed in the demoed Platform.
+- **Sequence** — an ordered organization of lessons used to distribute licensed DemoEd content.
+- **Custom Sequence** — a sequence created by users from DemoEd content available to them.
 - **Default Pathway** — the standard organization through which licensed lessons can be delivered.
 - **Salesforce Product** — the commercial product definition used in Salesforce sales activity.
 - **HubSpot Product** — HubSpot's Product definition, synchronized with Salesforce Products.
 - **NetSuite Product** — NetSuite's Product definition, synchronized with Salesforce Products.
 - **Opportunity Line Item / Deal** — the component of a Salesforce Opportunity that identifies the Salesforce Product and quantity being sold.
-- **License Order** — the LCom Platform representation of licensed access created from the commercial sale and expressed through SKUs and licensing provisioning.
+- **License Order** — the demoed Platform representation of licensed access created from the commercial sale and expressed through SKUs and licensing provisioning.
 - **Licensing Provisioning / Number of Students** — the number of students for whom access is provisioned through a License Order.
-- **Product Category** — a manually maintained reporting-only classification used to report LCom Platform usage under commonly recognized business product names. A Learning Item may belong to more than one Product Category, so categories can overlap and their usage totals are not necessarily additive.
-- **Salesforce Sub Family** — a broader Salesforce commercial product grouping that may contain several usage Product Categories or products whose usage does not occur in the LCom Platform.
+- **Product Category** — a manually maintained reporting-only classification used to report demoed Platform usage under commonly recognized business product names. A DemoEd Item may belong to more than one Product Category, so categories can overlap and their usage totals are not necessarily additive.
+- **Salesforce Sub Family** — a broader Salesforce commercial product grouping that may contain several usage Product Categories or products whose usage does not occur in the demoed Platform.
 
 ## Ontology Diagram
 
@@ -221,9 +221,9 @@ For this reason, Sub Family cannot serve as a direct conformed product grouping 
 
 flowchart LR
 
-    Lesson["Learning Item<br/>(Lesson)"]
+    Lesson["DemoEd Item<br/>(Lesson)"]
 
-    subgraph Platform["LCom Platform — Licensing & Delivery"]
+    subgraph Platform["demoed Platform — Licensing & Delivery"]
         SKU["SKU<br/>Licensed package / set"]
         Sequence["Sequence"]
         Default["Default Pathway"]

@@ -4,7 +4,7 @@
 ============================== 15:37:24.653731 | 72c9e4cb-99c5-442c-b914-c34434fa7b91 ==============================
 [0m15:37:24.653731 [info ] [MainThread]: Running with dbt=1.12.5
 [0m15:37:24.655097 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\KDrogaieva\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt init', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
-[0m15:37:33.156512 [debug] [MainThread]: Starter project path: C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\.venv\Lib\site-packages\dbt\include\starter_project
+[0m15:37:33.156512 [debug] [MainThread]: Starter project path: C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\.venv\Lib\site-packages\dbt\include\starter_project
 [0m15:37:33.208107 [info ] [MainThread]: Setting up your profile.
 [0m15:37:37.097680 [debug] [MainThread]: Redshift adapter: Setting redshift_connector to ERROR
 [0m15:37:37.098051 [debug] [MainThread]: Redshift adapter: Setting redshift_connector.core to ERROR
@@ -12,11 +12,11 @@
 [0m15:39:20.660117 [info ] [MainThread]: Running dbt debug to validate the project...
 [0m15:39:20.661323 [info ] [MainThread]: dbt version: 1.12.5
 [0m15:39:20.661886 [info ] [MainThread]: python version: 3.14.6
-[0m15:39:20.662224 [info ] [MainThread]: python path: C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\.venv\Scripts\python.exe
+[0m15:39:20.662224 [info ] [MainThread]: python path: C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\.venv\Scripts\python.exe
 [0m15:39:20.662516 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
 [0m15:39:20.785196 [info ] [MainThread]: Using profiles dir at C:\Users\KDrogaieva\.dbt
 [0m15:39:20.785903 [info ] [MainThread]: Using profiles.yml file at C:\Users\KDrogaieva\.dbt\profiles.yml
-[0m15:39:20.786368 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\workbench\dbt_semantic\dbt_project.yml
+[0m15:39:20.786368 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\workbench\dbt_semantic\dbt_project.yml
 [0m15:39:20.787675 [info ] [MainThread]: adapter type: redshift
 [0m15:39:20.788105 [info ] [MainThread]: adapter version: 1.11.1
 [0m15:39:20.865624 [info ] [MainThread]: Configuration:
@@ -74,7 +74,7 @@
 
 [0m15:39:22.430160 [info ] [MainThread]: [32mAll checks passed![0m
 [0m15:39:22.430656 [info ] [MainThread]: Your new dbt project "dbt_semantic" was created!
-Initialized new project in C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\workbench\dbt_semantic\dbt_semantic
+Initialized new project in C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\workbench\dbt_semantic\dbt_semantic
 
 For more information on how to configure the profiles.yml file,
 please consult the dbt documentation here:

@@ -47,7 +47,7 @@ Use these sections when supported by the source:
 
 ## Definition
 
-Explain what ARR means in Learning.com business reporting.
+Explain what ARR means in DemoEd.com business reporting.
 
 ## Distinction from Related Metrics
 
@@ -238,7 +238,7 @@ Do not invent missing relationships or business rules.
 
 Do not include database implementation details or dynamic instance-level facts.
 
-Because Case is a standard Salesforce object, standard Salesforce meaning may be used only for the generic definition of a Case. Do not assume Learning.com-specific meanings for fields or classifications that are not explained by the source.
+Because Case is a standard Salesforce object, standard Salesforce meaning may be used only for the generic definition of a Case. Do not assume DemoEd.com-specific meanings for fields or classifications that are not explained by the source.
 
 Use Markdown formatting consistently so the document is easy for both humans and LLMs to interpret.
 
@@ -274,7 +274,7 @@ Do not invent missing relationships or business rules.
 
 Do not include database implementation details or dynamic instance-level facts.
 
-Training Session is a custom Salesforce object. Use only the attached source to define its Learning.com business meaning; do not infer additional Salesforce behavior beyond what the source supports.
+Training Session is a custom Salesforce object. Use only the attached source to define its DemoEd.com business meaning; do not infer additional Salesforce behavior beyond what the source supports.
 
 Use Markdown formatting consistently so the document is easy for both humans and LLMs to interpret.
 

@@ -6,7 +6,7 @@ Why is Class Important?
 In addition to serving as the bridge between SalesForce and NetSuite, Class also determines how sales reps are compensated for their successes. Class tells our system how to differentiate the type of revenue we’re receiving from our customers, ensures that sales reps are properly compensated, and provides for accurate revenue reporting to our leadership teams and investors.
 
 The 3 Main Classes
-New Business - Use this class for the first-time purchase of a Learning.com | Preparing K-12 Students with Future-Ready Digital Skills  subscription by an account designated as an RPM Prospect (cf. Lifecycle Stage “Opportunity”) Standalone PD (PD Workshops, Webinars and Custom Professional Services) purchased with or without a renewal will be classed as New Business: NRR (this classification is automated in SalesForce).
+New Business - Use this class for the first-time purchase of a DemoEd.com | Preparing K-12 Students with Future-Ready Digital Skills  subscription by an account designated as an RPM Prospect (cf. Lifecycle Stage “Opportunity”) Standalone PD (PD Workshops, Webinars and Custom Professional Services) purchased with or without a renewal will be classed as New Business: NRR (this classification is automated in SalesForce).
 Once the first order for that account is processed as New Business, any additional orders—including orders for different schools within the same parent account—must be processed as Upsell.
 Sales should:
 
@@ -18,11 +18,11 @@ Update the Quote Type before changing product-line classifications, since Quote 
 
 Example: If one school within a district is processed as New Business, a later order for another school in that same district must be processed as Upsell.
 
-Renewal - Use this class for the purchase of a subscription to a Learning.com | Preparing K-12 Students with Future-Ready Digital Skills  product or service within the Renewal Time Period. The “Renewal Time Period” is the calendar year (Jan. 1 through Dec. 31) in which the subscription expires. Renewal value is based on annualized list price without discounting.
+Renewal - Use this class for the purchase of a subscription to a DemoEd.com | Preparing K-12 Students with Future-Ready Digital Skills  product or service within the Renewal Time Period. The “Renewal Time Period” is the calendar year (Jan. 1 through Dec. 31) in which the subscription expires. Renewal value is based on annualized list price without discounting.
 
-Upsell - Use this class for the expansion of an existing subscription to a Learning.com | Preparing K-12 Students with Future-Ready Digital Skills  product line within an account designated as a Customer. The rule of thumb here is: use upsell for the net positive difference in ARR between a renewal Opportunity and its source renewal contract (i.e., the previous cycle’s closed-won ARR). Upsell does not apply to price uplift, i.e., an increase in price over the previous year resulting from removal of discounting, pro-ration, and/or increases in list price.
+Upsell - Use this class for the expansion of an existing subscription to a DemoEd.com | Preparing K-12 Students with Future-Ready Digital Skills  product line within an account designated as a Customer. The rule of thumb here is: use upsell for the net positive difference in ARR between a renewal Opportunity and its source renewal contract (i.e., the previous cycle’s closed-won ARR). Upsell does not apply to price uplift, i.e., an increase in price over the previous year resulting from removal of discounting, pro-ration, and/or increases in list price.
 
-Win Back - This occurs when a previously churned customer returns to Learning.com. For example, if a customer was previously covered by a state program that lost funding and they now choose to purchase directly, the new transaction should be classified as New business.  For a State Deal Winback example, please see:  Michigan Win Back Campaign - Sales Support
+Win Back - This occurs when a previously churned customer returns to DemoEd.com. For example, if a customer was previously covered by a state program that lost funding and they now choose to purchase directly, the new transaction should be classified as New business.  For a State Deal Winback example, please see:  Michigan Win Back Campaign - Sales Support
 
 Class Subcategories
 Within the 3 main classes, there are 6 different subcategories of Class:
@@ -61,7 +61,7 @@ Accounts owned by RAMs: The customer failed to renew in their Renewal Time Perio
 Special Considerations and Exceptions
 Standalone PD (Custom Webinar and Onsite PD) for subscriptions that are classed as Renewal will be classed as Upsell: NRR. (Exception: PD on subsequent years of progressive orders shall be classed as Renewal.)
 
-Multi-year breakouts: Since standard pricing on select Learning.com products (EasyTech, Keyboarding, Online Safety, Curriculum Publisher) allows up to 15 months at annual list price, multi-year pricing is triggered by any period over 15 months, in which case content will need to be split out between first 12 months and subsequent year classes. For example, an 18-month New Business subscription will have the first full year classed as New Business ARR, and the subsequent 6 months classed as New Business Upfront Yrs 2&3 with respective start and end dates.
+Multi-year breakouts: Since standard pricing on select DemoEd.com products (EasyTech, Keyboarding, Online Safety, Curriculum Publisher) allows up to 15 months at annual list price, multi-year pricing is triggered by any period over 15 months, in which case content will need to be split out between first 12 months and subsequent year classes. For example, an 18-month New Business subscription will have the first full year classed as New Business ARR, and the subsequent 6 months classed as New Business Upfront Yrs 2&3 with respective start and end dates.
 
 Pilot Orders: On pilot orders whose duration is less than 12 months, class the content as New Business : NRR, whether paid or unpaid. For Pilots that last a full year, class the content as New Business : ARR (except for standalone PD), whether paid or unpaid.
 

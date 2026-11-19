@@ -28,7 +28,7 @@ flowchart TD
     I[AGENTS.md: agent instructions] --> C
     K[Business Knowledge Skill] --> C
     O[Ontology, glossary, rules, source authority] --> K
-    C --> M[Python FastMCP server: lcom_metrics]
+    C --> M[Python FastMCP server: demoed_metrics]
     M --> A[get_account: structured account context]
     M --> Q[run_metricflow_query: validated metric request]
     A --> V[Redshift: conformed account view]
@@ -48,11 +48,11 @@ The ontology in this repository is maintained as **Markdown business-domain docu
 
 | Component | Responsibility | Code / documentation |
 |---|---|---|
-| Business Knowledge Skill | Topic routing, source precedence, ontology-aware reasoning | [SKILL.md](plugins/lcom-business-context/skills/lcom-business-context/SKILL.md) |
-| Ontology | Account, Contract, License, Product, User, Usage, Support, Training, and related relationships | [ontology/](plugins/lcom-business-context/skills/lcom-business-context/ontology/) |
-| Business glossary | Common terms and reporting definitions | [business_glossary.md](plugins/lcom-business-context/skills/lcom-business-context/knowledge/business_glossary.md) |
-| ARR reference | Differences among True, Preliminary, and Backdated ARR | [annual_recurring_revenue_arr_knowledge.md](plugins/lcom-business-context/skills/lcom-business-context/knowledge/annual_recurring_revenue_arr_knowledge.md) |
-| Cross-domain context | Authority, source-system differences, data-quality limitations | [business_context.md](plugins/lcom-business-context/skills/lcom-business-context/knowledge/business_context.md) |
+| Business Knowledge Skill | Topic routing, source precedence, ontology-aware reasoning | [SKILL.md](plugins/demoed-business-context/skills/demoed-business-context/SKILL.md) |
+| Ontology | Account, Contract, License, Product, User, Usage, Support, Training, and related relationships | [ontology/](plugins/demoed-business-context/skills/demoed-business-context/ontology/) |
+| Business glossary | Common terms and reporting definitions | [business_glossary.md](plugins/demoed-business-context/skills/demoed-business-context/knowledge/business_glossary.md) |
+| ARR reference | Differences among True, Preliminary, and Backdated ARR | [annual_recurring_revenue_arr_knowledge.md](plugins/demoed-business-context/skills/demoed-business-context/knowledge/annual_recurring_revenue_arr_knowledge.md) |
+| Cross-domain context | Authority, source-system differences, data-quality limitations | [business_context.md](plugins/demoed-business-context/skills/demoed-business-context/knowledge/business_context.md) |
 | MCP server | FastMCP tools, validation, MetricFlow calls, account lookup | [metricflow_mcp.py](workbench/metricflow_mcp/metricflow_mcp.py) |
 | MCP regression tests | Valid/invalid query contract checks using an available dbt/warehouse environment | [test_metricflow_query.py](workbench/metricflow_mcp/test_metricflow_query.py) |
 | Codex instructions | Direct the agent to use ontology and MCP rather than inventing metric names or business rules | [AGENTS.md](AGENTS.md) |

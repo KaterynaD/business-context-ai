@@ -2,7 +2,7 @@
 
 ## Definition
 
-A **Customer Success Manager (CSM)** is a person responsible for helping **LCom Customers** get value from the **LCom Platform**.
+A **Customer Success Manager (CSM)** is a person responsible for helping **demoed Customers** get value from the **demoed Platform**.
 
 ## Related Ownership Roles
 

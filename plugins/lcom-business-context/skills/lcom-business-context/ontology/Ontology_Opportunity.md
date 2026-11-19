@@ -4,7 +4,7 @@
 
 A **Contract / Opportunity** represents a commercial transaction or potential commercial transaction with an account.
 
-Opportunities originate primarily in Salesforce. Some originate as HubSpot ECommerce deals, with HubSpot acting as the master system for those transactions. Contracts are integrated downstream as NetSuite orders and as license orders in the LCom Platform.
+Opportunities originate primarily in Salesforce. Some originate as HubSpot ECommerce deals, with HubSpot acting as the master system for those transactions. Contracts are integrated downstream as NetSuite orders and as license orders in the demoed Platform.
 
 **Opportunity** is the broader lifecycle concept. An opportunity can be won, lost, awaiting renewal, an upsell, a letter of intent, or an adjustment. **Contract** is not fully interchangeable with Opportunity: an opportunity is considered an **Active Contract** when it is in a Won or Upsell Won stage and has an Invoiced Date. Active Contracts contribute to company bookings and ARR.
 
@@ -27,7 +27,7 @@ Contracts may be annual, monthly for products whose revenue is annualized, or mu
 * **contains → Opportunity Line Item / Deal** — An Opportunity contains one or more product line items representing the individual deals within the Opportunity. Most Opportunities contain one line item, but an Opportunity may contain multiple line items with different products, revenue classes, or both.
 * **renews → Contract / Opportunity** — Opportunities are expected to participate in renewal relationships, but renewal linkage is not complete in practice. One child Opportunity may renew more than one parent Opportunity.
 * **integrated_as → NetSuite Order** — Contracts are normally integrated into NetSuite as orders. Negative and replacement adjustment Opportunities are an exception and are not integrated with NetSuite.
-* **integrated_as → LCom License Order** — Contracts are integrated into the LCom Platform as license orders.
+* **integrated_as → demoed License Order** — Contracts are integrated into the demoed Platform as license orders.
 * **may_originate_as → HubSpot ECommerce Deal** — Some ECommerce Opportunities originate in HubSpot and use HubSpot as their master system. Their renewals are created in Salesforce and loaded back to HubSpot.
 
 ## Business Rules
@@ -161,7 +161,7 @@ Contracts may be annual, monthly for products whose revenue is annualized, or mu
 * **Letter of Intent Opportunity** — small-quantity commitment representing an intention to purchase more licenses later.
 * **HubSpot ECommerce Deal** — HubSpot-originated ECommerce transaction corresponding to an Opportunity-level commercial transaction.
 * **NetSuite Order** — downstream order representation of a Contract.
-* **LCom License Order** — downstream licensing representation of a Contract in the LCom Platform.
+* **demoed License Order** — downstream licensing representation of a Contract in the demoed Platform.
 * **ARR** — annual recurring revenue category to which Active Contracts may contribute.
 * **NRR** — non-recurring revenue category used for portions of some multi-year Contracts and services like training and support
 * **Bookings** — company booking amounts contributed by Active Contracts.
@@ -183,7 +183,7 @@ flowchart LR
     P["Parent Opportunity"]
     HS["HubSpot ECommerce Deal"]
     NS["NetSuite Order"]
-    LCO["LCom License Order"]
+    LCO["demoed License Order"]
 
     AC["Active Contract"]
     AR["Active Renewal"]

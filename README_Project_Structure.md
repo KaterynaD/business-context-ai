@@ -1,14 +1,14 @@
-# lcom-plugins
+# demoed-plugins
 
-This repository is the working home for Learning.com context used by ChatGPT.
+This repository is the working home for DemoEd.com context used by ChatGPT.
 
-Its current primary deliverable is the **`lcom-business-context` Skill**, which provides curated business knowledge such as ontology definitions, glossary content, and business rules. The repository is intentionally structured so that additional **Skills**, **Plugins**, and/or  **MCP servers** can be added later.
+Its current primary deliverable is the **`demoed-business-context` Skill**, which provides curated business knowledge such as ontology definitions, glossary content, and business rules. The repository is intentionally structured so that additional **Skills**, **Plugins**, and/or  **MCP servers** can be added later.
 
 ## Repository purpose
 
 Use this repository to:
 
-- develop and maintain Learning.com business knowledge for AI use;
+- develop and maintain DemoEd.com business knowledge for AI use;
 - create and test ontology, glossary, prompts, and supporting business context;
 - maintain scripts and other tooling used to prepare or validate that knowledge;
 - publish finished Skills, Plugins, and MCP components in locations intended for ChatGPT.
@@ -16,7 +16,7 @@ Use this repository to:
 ## Repository structure
 
 ```text
-lcom-business-context/
+demoed-business-context/
 ├── README.md
 ├── workbench/
 ├── plugins/
@@ -56,7 +56,7 @@ Files in `workbench/` are not considered final ChatGPT deliverables.
 
 Reserved for final Plugin content intended for ChatGPT.
 
-The current `lcom-business-context` Skill belongs under the appropriate Plugin structure here. Additional Skills or Plugins may be added later.
+The current `demoed-business-context` Skill belongs under the appropriate Plugin structure here. Additional Skills or Plugins may be added later.
 
 Only reviewed, ready-to-use content should be copied or promoted from `workbench/` into `plugins/`.
 
@@ -96,7 +96,7 @@ Once content or code is reviewed and ready for use, move or copy the final versi
 
 ## Current scope
 
-The repository currently focuses on the **`lcom-business-context` Skill**, including business ontology and curated business knowledge.
+The repository currently focuses on the **`demoed-business-context` Skill**, including business ontology and curated business knowledge.
 
 The structure is designed to support future expansion without requiring a new repository for every capability. Additional Skills, Plugins, MCP servers, and supporting AI components can be added as the project grows.
 

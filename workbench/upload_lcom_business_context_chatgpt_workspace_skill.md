@@ -1,4 +1,4 @@
-# Upload and Share `lcom-business-context` as a ChatGPT Workspace Skill
+# Upload and Share `demoed-business-context` as a ChatGPT Workspace Skill
 
 > Verified against current OpenAI workspace Skill documentation on September 15, 2026.
 
@@ -7,7 +7,7 @@
 You should already have a ZIP file with this structure:
 
 ```text
-lcom-business-context.zip
+demoed-business-context.zip
 ├── SKILL.md
 ├── ontology/
 │   ├── ...
@@ -23,7 +23,7 @@ lcom-business-context.zip
 
 1. Open ChatGPT in your browser.
 2. Sign in using your company ChatGPT account.
-3. Make sure you are working inside the Learning.com company workspace, not your personal ChatGPT workspace.
+3. Make sure you are working inside the DemoEd.com company workspace, not your personal ChatGPT workspace.
 
 If your account belongs to more than one workspace, switch to the company workspace before continuing.
 
@@ -40,7 +40,7 @@ You should see sections such as:
 - **Installed**
 - **Created by me**
 - **Shared with me**
-- **Shared by Learning.com** or a similarly named workspace section
+- **Shared by DemoEd.com** or a similarly named workspace section
 
 ---
 
@@ -51,7 +51,7 @@ You should see sections such as:
 3. Choose:
 
 ```text
-lcom-business-context.zip
+demoed-business-context.zip
 ```
 
 4. Wait for ChatGPT to scan the Skill.
@@ -71,7 +71,7 @@ After the upload succeeds:
 
 1. Go to **Plugins → Skills**.
 2. Open **Created by me**.
-3. Find `lcom-business-context`.
+3. Find `demoed-business-context`.
 4. Open it and confirm that the Skill is available.
 
 At this point, do not share it with the entire workspace yet.
@@ -85,7 +85,7 @@ Install or enable the Skill for your own account if ChatGPT asks you to do so.
 Start a new chat and try several questions that should use your business knowledge, for example:
 
 ```text
-What is an LCom Customer?
+What is an demoed Customer?
 ```
 
 ```text
@@ -111,7 +111,7 @@ You can also explicitly select or `@`-mention the Skill when testing it.
 When you are satisfied with the test:
 
 1. Go to **Plugins → Skills**.
-2. Find `lcom-business-context`.
+2. Find `demoed-business-context`.
 3. Select the **•••** menu next to the Skill.
 4. Select **Share**.
 5. Under access, search for your workspace group:
@@ -123,7 +123,7 @@ Reporting & Analytics
 6. Select that group.
 7. Save the sharing settings.
 
-Use access for the specific group rather than publishing the Skill to the whole Learning.com workspace.
+Use access for the specific group rather than publishing the Skill to the whole DemoEd.com workspace.
 
 ---
 
@@ -133,7 +133,7 @@ After you share the Skill, a Reporting & Analytics user can:
 
 1. Open **Plugins → Skills**.
 2. Open **Shared with me**.
-3. Find `lcom-business-context`.
+3. Find `demoed-business-context`.
 4. Select **•••**.
 5. Select **Install** if installation is required.
 
@@ -147,7 +147,7 @@ Users can also explicitly invoke the Skill by selecting or `@`-mentioning it.
 
 If **Plugins**, **Skills**, **Create**, or **Upload from your computer** is missing, your workspace permissions may not allow Skill creation or uploading.
 
-Ask a Learning.com ChatGPT workspace administrator to check:
+Ask a DemoEd.com ChatGPT workspace administrator to check:
 
 ```text
 Workspace settings
@@ -184,7 +184,7 @@ You can also initially share with a few named coworkers individually if group ma
 Keep your local folder as the source that you edit:
 
 ```text
-lcom-business-context/
+demoed-business-context/
 └── skill/
     ├── SKILL.md
     ├── ontology/
@@ -209,7 +209,7 @@ Local Skill files
        ↓
 Create ZIP
        ↓
-Sign in to Learning.com ChatGPT workspace
+Sign in to DemoEd.com ChatGPT workspace
        ↓
 Plugins
        ↓

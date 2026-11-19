@@ -7,7 +7,7 @@ import re
 FILES = [
     "business_term_Fiscal_and_School_Year_Calendar.md",
     "business_term_Account.md",
-    "business_term_LCom_Customer.md",
+    "business_term_demoed_Customer.md",
     "business_term_Contact.md",
     "business_term_CSM.md",
     "business_term_Opportunity.md",

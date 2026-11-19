@@ -19,7 +19,7 @@ python -c "import sys; print(sys.executable)"
 For this setup:
 
 ```text
-C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\.venv\Scripts\python.exe
+C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\.venv\Scripts\python.exe
 ```
 
 This must be the Python environment where the MCP server dependencies are installed.
@@ -35,13 +35,13 @@ Resolve-Path .\metricflow_mcp.py
 For this setup:
 
 ```text
-C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\workbench\metricflow_mcp\metricflow_mcp.py
+C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\workbench\metricflow_mcp\metricflow_mcp.py
 ```
 
 The working directory is:
 
 ```text
-C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\workbench\metricflow_mcp
+C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\workbench\metricflow_mcp
 ```
 
 ## 3. Confirm the MCP server uses `stdio`
@@ -76,10 +76,10 @@ If the file does not exist, create it.
 Add the following block to `config.toml`:
 
 ```toml
-[mcp_servers.lcom_metrics]
-command = 'C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\.venv\Scripts\python.exe'
-args = ['C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\workbench\metricflow_mcp\metricflow_mcp.py']
-cwd = 'C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\workbench\metricflow_mcp'
+[mcp_servers.demoed_metrics]
+command = 'C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\.venv\Scripts\python.exe'
+args = ['C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\workbench\metricflow_mcp\metricflow_mcp.py']
+cwd = 'C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\workbench\metricflow_mcp'
 startup_timeout_sec = 30
 enabled = true
 default_tools_approval_mode = "approve"
@@ -113,7 +113,7 @@ DBT_TARGET
 Keep the `.env` file in the MCP working directory:
 
 ```text
-lcom-plugins\
+demoed-plugins\
 └── workbench\
     └── metricflow_mcp\
         ├── metricflow_mcp.py
@@ -147,13 +147,13 @@ codex mcp list
 The configured server should appear as:
 
 ```text
-lcom_metrics
+demoed_metrics
 ```
 
 You can also test it from Codex Desktop with a prompt such as:
 
 ```text
-Use the lcom_metrics MCP server and return the available metrics.
+Use the demoed_metrics MCP server and return the available metrics.
 ```
 
 Codex should be able to discover and call the tools exposed by `metricflow_mcp.py`.
@@ -161,10 +161,10 @@ Codex should be able to discover and call the tools exposed by `metricflow_mcp.p
 ## Final configuration
 
 ```toml
-[mcp_servers.lcom_metrics]
-command = 'C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\.venv\Scripts\python.exe'
-args = ['C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\workbench\metricflow_mcp\metricflow_mcp.py']
-cwd = 'C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\workbench\metricflow_mcp'
+[mcp_servers.demoed_metrics]
+command = 'C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\.venv\Scripts\python.exe'
+args = ['C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\workbench\metricflow_mcp\metricflow_mcp.py']
+cwd = 'C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\workbench\metricflow_mcp'
 startup_timeout_sec = 30
 enabled = true
 default_tools_approval_mode = "approve"
@@ -177,8 +177,8 @@ If the MCP server does not start:
 1. Run the MCP Python file manually with the same virtual-environment Python:
 
    ```powershell
-   & "C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\.venv\Scripts\python.exe" `
-     "C:\Users\KDrogaieva\OneDrive - Learning.com\Development\lcom-plugins\workbench\metricflow_mcp\metricflow_mcp.py"
+   & "C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\.venv\Scripts\python.exe" `
+     "C:\Users\KDrogaieva\OneDrive - DemoEd.com\Development\demoed-plugins\workbench\metricflow_mcp\metricflow_mcp.py"
    ```
 
 2. Verify that the required packages are installed in that virtual environment.

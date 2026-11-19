@@ -4,7 +4,7 @@
 
 - [Fiscal and School Year Calendar](#fiscal-and-school-year-calendar)
 - [Account](#account)
-- [LCom Customer](#lcom-customer)
+- [demoed Customer](#demoed-customer)
 - [Contact](#contact)
 - [CSM (Customer Success Manager)](#csm-customer-success-manager)
 - [Contract / Opportunity](#contract-opportunity)
@@ -25,7 +25,7 @@
 
 ## Fiscal and School Year Calendar
 
-Learning.com uses a custom **Fiscal Year calendar** that runs from **July 1 through June 30**. It is aligned with the commonly used **School Year** cycle to make financial and educational activity easier to compare, although individual schools and districts may follow different academic calendars.
+DemoEd.com uses a custom **Fiscal Year calendar** that runs from **July 1 through June 30**. It is aligned with the commonly used **School Year** cycle to make financial and educational activity easier to compare, although individual schools and districts may follow different academic calendars.
 
 A year is identified by the **two calendar years it spans**, using the format **YYYY/YYYY**. For example, **2025/2026** represents July 1, 2025 through June 30, 2026.
 
@@ -41,14 +41,14 @@ A year is identified by the **two calendar years it spans**, using the format **
 
 # Account
 
-An **Account / Organization** represents a public or commercial educational organization that has, had, or may have a relationship with Learning.com. This can include schools, districts, state education organizations, private schools, and other organizations that purchase products, hold licenses, use Learning.com products, receive services, or exist as prospects.
+An **Account / Organization** represents a public or commercial educational organization that has, had, or may have a relationship with DemoEd.com. This can include schools, districts, state education organizations, private schools, and other organizations that purchase products, hold licenses, use DemoEd.com products, receive services, or exist as prospects.
 
 An Account has both an **operational** and a **commercial** context, and these do not always align. Operationally, schools and districts represent where licenses and product usage occur. Commercially, revenue can be assigned to any level of account hierarchy.
 
 - A typical public-education structure is **School → District**.
 - Commercial organizations are grouped under a **Customer**, defined as the **Salesforce Ultimate Parent Account**. They may have additional intermediate levels, but for reporting purposes the hierarchy is represented as **School → District → Customer**.
 - An individual low-level account such as a school is not counted as a company customer even if revenue is associated directly with that school; it is reported under its parent account like District or Customer along with other schools in this district.
-- Most accounts both pay for and use Learning.com products, but some arrangements—particularly **State Program Deals**—have one account (like a State Department of Education) paying while other accounts (public districts and schools) receive licenses and generate usage.
+- Most accounts both pay for and use DemoEd.com products, but some arrangements—particularly **State Program Deals**—have one account (like a State Department of Education) paying while other accounts (public districts and schools) receive licenses and generate usage.
 - Licenses are always provisioned at the District level
 - Product Usage mostly collected at the School level with small amount at the District level when a school can not be defined from the data
 
@@ -56,16 +56,16 @@ An Account has both an **operational** and a **commercial** context, and these d
 
 ---
 
-# LCom Customer
+# demoed Customer
 
-An **LCom Customer** is an organization at the **Customer / Ultimate Parent level** with **non-zero ARR from active contracts**. It represents the organization counted as a customer when answering business questions such as **“How many customers does Learning.com have?”**
+An **demoed Customer** is an organization at the **Customer / Ultimate Parent level** with **non-zero ARR from active contracts**. It represents the organization counted as a customer when answering business questions such as **“How many customers does DemoEd.com have?”**
 
-Revenue may come from contracts associated with different Accounts within the Customer hierarchy. Individual Accounts—such as schools or Accounts in the District role—are **not counted as separate LCom Customers**, even when they have their own active contracts and non-zero ARR. Their revenue contributes to their Customer / Ultimate Parent.
+Revenue may come from contracts associated with different Accounts within the Customer hierarchy. Individual Accounts—such as schools or Accounts in the District role—are **not counted as separate demoed Customers**, even when they have their own active contracts and non-zero ARR. Their revenue contributes to their Customer / Ultimate Parent.
 
-- When an LCom Customer’s total ARR becomes **$0**, the Customer is considered **churned**.
-- Holding licenses or using Learning.com products does **not** make an organization an LCom Customer.
-- Districts and schools using products through a **State Program Deal** are license holders/product users, not separate LCom Customers, unless they belong to a different Customer / Ultimate Parent with its own non-zero ARR.
-- Because these license holders are not LCom Customers, losing their State Program access or usage is **not customer churn**.
+- When an demoed Customer’s total ARR becomes **$0**, the Customer is considered **churned**.
+- Holding licenses or using DemoEd.com products does **not** make an organization an demoed Customer.
+- Districts and schools using products through a **State Program Deal** are license holders/product users, not separate demoed Customers, unless they belong to a different Customer / Ultimate Parent with its own non-zero ARR.
+- Because these license holders are not demoed Customers, losing their State Program access or usage is **not customer churn**.
 
 [↑ Back to Contents](#contents)
 
@@ -85,7 +85,7 @@ Contacts may originate in **Salesforce** or **HubSpot**. When the same Contact e
 
 ## Definition
 
-A **Customer Success Manager (CSM)** is a person responsible for helping **LCom Customers** get value from the **LCom Platform**.
+A **Customer Success Manager (CSM)** is a person responsible for helping **demoed Customers** get value from the **demoed Platform**.
 
 ## Related Ownership Roles
 
@@ -104,7 +104,7 @@ A **Contract / Opportunity** represents a commercial transaction or potential co
 
 Contracts are commonly annual, but they may also be shorter-term with annualized revenue or multi-year. Renewal relationships represent commercial continuity but are not always complete or one-to-one. 
 
-If a renewal is still pending, the existing contract may remain active past its End Date to allow early access to LCom Platform.
+If a renewal is still pending, the existing contract may remain active past its End Date to allow early access to demoed Platform.
 
 Backdated opportunities are common when Invoiced Date is after Start Date.
 
@@ -267,14 +267,14 @@ For more details, see **ARR Methodology, Framework and Definitions**.
 
 # Churn
 
-**Churn** occurs when an **LCom Customer’s total ARR becomes $0**. The LCom Customer is then considered **churned** and is no longer counted as a current LCom Customer.
+**Churn** occurs when an **demoed Customer’s total ARR becomes $0**. The demoed Customer is then considered **churned** and is no longer counted as a current demoed Customer.
 
 Churn is determined at the **Customer / Ultimate Parent level**, not at the individual Account, District or School level.
 
 - A school or District-role Account losing its own ARR does not represent churn if its Customer / Ultimate Parent still has non-zero ARR from other schools or districts.
 - The expiration or loss of a license does not by itself represent churn.
-- Districts and schools that participate only through a **State Program Deal** are not LCom Customers and therefore cannot churn.
-- If a churned LCom Customer later has non-zero ARR again, it becomes a **Returning LCom Customer**.
+- Districts and schools that participate only through a **State Program Deal** are not demoed Customers and therefore cannot churn.
+- If a churned demoed Customer later has non-zero ARR again, it becomes a **Returning demoed Customer**.
 
 [↑ Back to Contents](#contents)
 
@@ -282,9 +282,9 @@ Churn is determined at the **Customer / Ultimate Parent level**, not at the indi
 
 # Product
 
-**Product** is a common term for an LCom offering, but it does not have one single definition across sales, licensing and learning content. The fundamental concept is the **Learning Item (Lesson)**. Lessons are packaged and organized in overlapping ways for sale, licensing, and delivery to students.
+**Product** is a common term for an demoed offering, but it does not have one single definition across sales, licensing and DemoEd content. The fundamental concept is the **DemoEd Item (Lesson)**. Lessons are packaged and organized in overlapping ways for sale, licensing, and delivery to students.
 
-Products are sold through commercial product definitions in Salesforce and licensed in the LCom Platform through **SKUs**. Licensed lessons are delivered through **Sequences** and a **Default Pathway**; teachers and district coordinators can also create **Custom Sequences** from available lessons. Usage is measured at the Lesson level and cannot be reliably attributed to a Salesforce Product or specific licensed SKU, so **Product Categories** are used to group usage for product reporting.
+Products are sold through commercial product definitions in Salesforce and licensed in the demoed Platform through **SKUs**. Licensed lessons are delivered through **Sequences** and a **Default Pathway**; teachers and district coordinators can also create **Custom Sequences** from available lessons. Usage is measured at the Lesson level and cannot be reliably attributed to a Salesforce Product or specific licensed SKU, so **Product Categories** are used to group usage for product reporting.
 
 - Salesforce Products and licensing SKUs have a many-to-many relationship rather than a one-to-one mapping.
 - Sequences, Custom Sequences, and Default Pathways organize and deliver lessons; they are not independently sold or licensed products.
@@ -300,9 +300,9 @@ Products are sold through commercial product definitions in Salesforce and licen
 
 # License Order
 
-A **License Order** represents licensing for an LCom District for a defined period and LCom Product. It is created from a **Salesforce Opportunity Line Items** and includes **License Provisioning**, usually expressed as a number of students, along with the schools covered by the order. License Provisioning represents how many students Learning.com is paid to serve and is an estimate of potential student use rather than a limit on how many individual users may access the platform.
+A **License Order** represents licensing for an demoed District for a defined period and demoed Product. It is created from a **Salesforce Opportunity Line Items** and includes **License Provisioning**, usually expressed as a number of students, along with the schools covered by the order. License Provisioning represents how many students DemoEd.com is paid to serve and is an estimate of potential student use rather than a limit on how many individual users may access the platform.
 
-**License Provisioning should not be confused with Active Users.** Active Users are users, mostly students, who have actually started using the LCom Platform. Because the provisioned quantity does not limit access, actual users can exceed License Provisioning. Provisioning is maintained for the District-level order and is not allocated to individual schools, so it cannot be used to determine accurate school-level provisioning or utilization.
+**License Provisioning should not be confused with Active Users.** Active Users are users, mostly students, who have actually started using the demoed Platform. Because the provisioned quantity does not limit access, actual users can exceed License Provisioning. Provisioning is maintained for the District-level order and is not allocated to individual schools, so it cannot be used to determine accurate school-level provisioning or utilization.
 
 - License Orders have Start and End dates and may be enforced or unenforced.
 - Late-closing contracts can create backdated License Orders and change historical active-license counts.
@@ -351,9 +351,9 @@ It is possible to report a historical snapshot that excludes later backdated cha
 
 # User
 
-A **User** is a student, teacher, or district coordinator who uses an LCom Product. Users are associated with a district, and students and teachers may also be associated with a school.
+A **User** is a student, teacher, or district coordinator who uses an demoed Product. Users are associated with a district, and students and teachers may also be associated with a school.
 
-For internal LCom business reporting, Users are mainly counted to understand product usage rather than to identify individuals. A student’s school or grade may change over time, so reporting can include both current and historical enrollment context. User names and emails are not currently used for this reporting.
+For internal demoed business reporting, Users are mainly counted to understand product usage rather than to identify individuals. A student’s school or grade may change over time, so reporting can include both current and historical enrollment context. User names and emails are not currently used for this reporting.
 
 [↑ Back to Contents](#contents)
 
@@ -361,9 +361,9 @@ For internal LCom business reporting, Users are mainly counted to understand pro
 
 # Enrollment
 
-**Enrollment** is the number of students associated with a school or district. Enrollment data may come from LCom Platform rosters maintained by teachers and district coordinators or from NCES enrollment data.
+**Enrollment** is the number of students associated with a school or district. Enrollment data may come from demoed Platform rosters maintained by teachers and district coordinators or from NCES enrollment data.
 
-Enrollment should be treated as an **estimate rather than an exact count**. LCom Platform enrollment may include students or schools that are not using the platform and may retain students who have left. NCES data may be outdated, and school enrollment totals may not always match district enrollment totals.
+Enrollment should be treated as an **estimate rather than an exact count**. demoed Platform enrollment may include students or schools that are not using the platform and may retain students who have left. NCES data may be outdated, and school enrollment totals may not always match district enrollment totals.
 
 [↑ Back to Contents](#contents)
 
@@ -371,12 +371,12 @@ Enrollment should be treated as an **estimate rather than an exact count**. LCom
 
 # Usage
 
-**Usage** represents interactions by Users with Learning Items in the LCom Platform, such as launching or completing a lesson. Each Usage event is associated with a User, a Learning Item, a Grade, and an organization—normally a School, or a District when the School is not available.
+**Usage** represents interactions by Users with DemoEd Items in the demoed Platform, such as launching or completing a lesson. Each Usage event is associated with a User, a DemoEd Item, a Grade, and an organization—normally a School, or a District when the School is not available.
 
-Learning Items can be organized in several independent ways, including Topic, SKU, Sequence, Unit, Default Path, and Product Category. These groupings do not form a single hierarchy, and a specific Usage event cannot be reliably tied to the particular licensed SKU or Salesforce Product that provided access.
+DemoEd Items can be organized in several independent ways, including Topic, SKU, Sequence, Unit, Default Path, and Product Category. These groupings do not form a single hierarchy, and a specific Usage event cannot be reliably tied to the particular licensed SKU or Salesforce Product that provided access.
 
-- The same User may launch or complete the same Learning Item more than once.
-- Product Categories can overlap because a Learning Item may belong to more than one category, so totals across categories are not additive.
+- The same User may launch or complete the same DemoEd Item more than once.
+- Product Categories can overlap because a DemoEd Item may belong to more than one category, so totals across categories are not additive.
 - Unique User counts are also non-additive across organizational levels. Summing School-level unique Users is accepted as an approximation for higher levels, with an observed difference of approximately 2% or less from the exact distinct count.
 
 [↑ Back to Contents](#contents)
@@ -385,7 +385,7 @@ Learning Items can be organized in several independent ways, including Topic, SK
 
 # Usage Metrics
 
-Usage metrics summarize User activity in the LCom Platform since the start of the school year.
+Usage metrics summarize User activity in the demoed Platform since the start of the school year.
 
 - **Active Users** — unique students, teachers, and district coordinators with at least one Launch.
 - **Launches** — unique Launch events.
@@ -402,7 +402,7 @@ In practice, School-level unique User counts are summed for higher-level totals.
 
 # Training Session
 
-A **Training Session** is a Learning.com professional training activity. It records the training being planned or delivered, including who requested and delivers it, the topics covered, attendance and implementation information, and post-training feedback.
+A **Training Session** is a DemoEd.com professional training activity. It records the training being planned or delivered, including who requested and delivers it, the topics covered, attendance and implementation information, and post-training feedback.
 
 The Account associated with the Training Session is not always the Account that paid for it. For example, a District or Customer may purchase training that is delivered through separate Training Sessions for individual Schools. Training is paid for through an Opportunity, but the Training Session does not have a direct relationship to that Opportunity in the available data.
 

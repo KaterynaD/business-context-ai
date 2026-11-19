@@ -41,8 +41,8 @@ The term **Deal** is potentially ambiguous. In the context of this ontology, it 
 - **contains_product → Salesforce Product**  
   Each line item represents a Salesforce product.
 
-- **product_maps_to → LCom Product SKU**  
-  Salesforce products and LCom product SKUs have a many-to-many relationship. A Salesforce product therefore does not necessarily identify one unique LCom product SKU.
+- **product_maps_to → demoed Product SKU**  
+  Salesforce products and demoed product SKUs have a many-to-many relationship. A Salesforce product therefore does not necessarily identify one unique demoed product SKU.
 
 - **coexists_with → Opportunity Line Item / Deal**  
   Multiple line items may belong to the same Opportunity and may have the same or different products and the same or different classifications.
@@ -440,7 +440,7 @@ These statements describe different aspects of the classification and pricing pr
 
 A renewal may use a different Salesforce Product from the previous transaction while still representing continuation of the same product type.
 
-Additionally, Salesforce Product and LCom Product SKU have a many-to-many relationship.
+Additionally, Salesforce Product and demoed Product SKU have a many-to-many relationship.
 
 Therefore, exact product equality is insufficient to establish whether two Deals represent continuity, replacement, or genuinely different product business.
 
@@ -455,7 +455,7 @@ Upsell classification is the clearest documented example.
 
 - **Opportunity / Contract** — Parent commercial transaction containing one or more Opportunity Line Items.
 - **Salesforce Product** — Product represented directly on the Opportunity Line Item.
-- **LCom Product SKU** — Product identifier used in the LCom product context; related many-to-many with Salesforce Product.
+- **demoed Product SKU** — Product identifier used in the demoed product context; related many-to-many with Salesforce Product.
 - **District Deal** — Recurring business generally represented with ARR classification.
 - **State Program Deal** — Biz Dev business associated with state-level initiatives and eligible organizations.
 - **New Business** — First qualifying purchase within the applicable Account / parent Account context.
@@ -488,7 +488,7 @@ graph LR
     
 
     SP["Salesforce Product"]
-    SKU["LCom Product SKU"]
+    SKU["demoed Product SKU"]
 
     L -->|"contains product"| SP
     SP <-->|"many-to-many"| SKU

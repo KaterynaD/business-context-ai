@@ -2,30 +2,30 @@
 
 ## Definition
 
-An **Account / Organization** is the conformed representation of an organization that has, had, or may have a commercial, licensing, organizational, or product-usage relationship with Learning.com.
+An **Account / Organization** is the conformed representation of an organization that has, had, or may have a commercial, licensing, organizational, or product-usage relationship with DemoEd.com.
 
 An Account / Organization can represent a public educational organization, such as a public school or district, or a commercial educational organization, such as a private school, summer camp, or after-school program.
 
-An organization can participate in one or more relationships with Learning.com. It may
+An organization can participate in one or more relationships with DemoEd.com. It may
 
-- purchase Learning.com products;
+- purchase DemoEd.com products;
 - hold licenses;
 - contain users;
-- consume LCom Platform lessons;
+- consume demoed Platform lessons;
 - open technical support cases;
 - receive trainings;
 - exist as a prospective organization;
 - exist as a reference organization.
 
-There is no single source-system representation of the Account / Organization entity within Learning.com. Its identity and hierarchy are distributed primarily between **LCom Platform Organizations** and **Salesforce **, with additional account creation or synchronization paths involving HubSpot and NetSuite.
+There is no single source-system representation of the Account / Organization entity within DemoEd.com. Its identity and hierarchy are distributed primarily between **demoed Platform Organizations** and **Salesforce **, with additional account creation or synchronization paths involving HubSpot and NetSuite.
 
-The organization may originate in LCom Platform, Salesforce, or an integrated upstream system like HubSpot or may exist in only one system.
+The organization may originate in demoed Platform, Salesforce, or an integrated upstream system like HubSpot or may exist in only one system.
 
-Its operational hierarchy and commercial hierarchy can differ. LCom Platform provides the primary view of school/district product organization, while Salesforce provides the primary view of the commercial Customer / Ultimate Parent relationship.
+Its operational hierarchy and commercial hierarchy can differ. demoed Platform provides the primary view of school/district product organization, while Salesforce provides the primary view of the commercial Customer / Ultimate Parent relationship.
 
 Historical, deleted, unlinked, duplicate, generic, and source-only organizations remain part of the account domain when required to preserve historical revenue, licensing, or usage activity.
 
-The central complication of the Account / Organization entity is not merely duplicate matching. Learning.com has overlapping operational and commercial representations of the same organizational world, created at different times for different purposes and with different hierarchy rules. A usable account model has to preserve both rather than assume that either Salesforce or LCom alone completely defines what an Account is.
+The central complication of the Account / Organization entity is not merely duplicate matching. DemoEd.com has overlapping operational and commercial representations of the same organizational world, created at different times for different purposes and with different hierarchy rules. A usable account model has to preserve both rather than assume that either Salesforce or demoed alone completely defines what an Account is.
 
 ## Aliases
 
@@ -44,9 +44,9 @@ In particular:
 
 ## Relationships
 
-`operationally_represented_by → LCom Platform Organization`
+`operationally_represented_by → demoed Platform Organization`
 
-LCom Platform represents the operational/product side of an organization. Its hierarchy governs licenses and product usage and is generally the stronger representation of the operational school/district relationship.
+demoed Platform represents the operational/product side of an organization. Its hierarchy governs licenses and product usage and is generally the stronger representation of the operational school/district relationship.
 
 `commercially_represented_by → Salesforce Account`
 
@@ -54,19 +54,19 @@ Salesforce represents primarily the commercial side of an organization. It gover
 
 `may_be_linked_to → Salesforce Account`
 
-An LCom Platform Organization may be linked to a Salesforce Account. The relationship is operationally established and can occur after either record has already been created. The two systems do not share a naturally enforced common identifier.
+An demoed Platform Organization may be linked to a Salesforce Account. The relationship is operationally established and can occur after either record has already been created. The two systems do not share a naturally enforced common identifier.
 
-`may_be_linked_to → LCom Platform Organization`
+`may_be_linked_to → demoed Platform Organization`
 
-A Salesforce Account may be linked to an LCom Platform Organization. A Salesforce-only Account can also exist without such a link.
+A Salesforce Account may be linked to an demoed Platform Organization. A Salesforce-only Account can also exist without such a link.
 
-`may_exist_only_as → LCom Platform Organization`
+`may_exist_only_as → demoed Platform Organization`
 
-Some organizations exist in LCom Platform without a corresponding recognized Salesforce Account.
+Some organizations exist in demoed Platform without a corresponding recognized Salesforce Account.
 
 `may_exist_only_as → Salesforce Account`
 
-Some organizations exist in Salesforce without a corresponding recognized LCom Platform Organization.
+Some organizations exist in Salesforce without a corresponding recognized demoed Platform Organization.
 
 `may_originate_in → HubSpot`
 
@@ -78,7 +78,7 @@ It is theoretically possible for an organization to originate through NetSuite a
 
 `described_by → NCES Reference Data`
 
-Public and private educational organization data from NCES is periodically loaded into Salesforce and is available as descriptive Account attributes. NCES data does not replace either the operational LCom hierarchy or the commercial Salesforce hierarchy.
+Public and private educational organization data from NCES is periodically loaded into Salesforce and is available as descriptive Account attributes. NCES data does not replace either the operational demoed hierarchy or the commercial Salesforce hierarchy.
 
 `may_occupy_role → School`
 
@@ -94,7 +94,7 @@ An organization can occupy the Customer role when it is the Salesforce Ultimate 
 
 `operational_parent → District / Operating Parent`
 
-In the typical public-education operational hierarchy, a school belongs to a district. LCom Platform is generally the stronger representation of this relationship.
+In the typical public-education operational hierarchy, a school belongs to a district. demoed Platform is generally the stronger representation of this relationship.
 
 `commercial_parent → Customer / Ultimate Parent`
 
@@ -114,11 +114,11 @@ For customer-level reporting, the Ultimate Parent Account Owner can practically 
 
 `may_hold → License in District role`
 
-Licenses are associated with LCom districts. License ownership does not by itself define the commercial Customer or organizational level.
+Licenses are associated with demoed districts. License ownership does not by itself define the commercial Customer or organizational level.
 
 `may_generate → Product Usage in District or School role`
 
-Users can generate product usage under schools, districts, or generic school-level LCom Organizations. Product usage does not by itself define the organization's commercial role or hierarchy level.
+Users can generate product usage under schools, districts, or generic school-level demoed Organizations. Product usage does not by itself define the organization's commercial role or hierarchy level.
 
 `may_generate → Revenue`
 
@@ -148,16 +148,16 @@ A Salesforce Account at school or district level can be manually marked as eligi
 
 ### Operational and Commercial Representations
 
-- LCom Platform is the primary operational/product representation of organizations.
+- demoed Platform is the primary operational/product representation of organizations.
 - Salesforce is primarily the commercial representation of organizations.
 - Neither source alone completely defines the Account / Organization entity.
-- The LCom hierarchy is generally the stronger representation of the operational school/district relationship because it governs licenses and product usage.
+- The demoed hierarchy is generally the stronger representation of the operational school/district relationship because it governs licenses and product usage.
 - Salesforce Ultimate Parent is the stronger representation of the commercial Customer relationship because Salesforce governs opportunities and revenue.
-- A disagreement between LCom and Salesforce hierarchy levels does not necessarily mean that one entire hierarchy is wrong. The systems represent organizations for different purposes.
+- A disagreement between demoed and Salesforce hierarchy levels does not necessarily mean that one entire hierarchy is wrong. The systems represent organizations for different purposes.
 
-### LCom Platform Hierarchy
+### demoed Platform Hierarchy
 
-The LCom Platform hierarchy has two primary levels:
+The demoed Platform hierarchy has two primary levels:
 
 ```text
 District
@@ -172,14 +172,14 @@ District
 - District users can generate usage under the district organization itself.
 - District users can also generate usage under a generic school-level organization created to represent school-level usage for district users.
 - Generic school-level organizations can have names such as `Cloud`, `*cloud`, or similar variants.
-- A school-level LCom Organization must not automatically be interpreted as a physical school.
+- A school-level demoed Organization must not automatically be interpreted as a physical school.
 
-### LCom Organization Deletion and Historical Activity
+### demoed Organization Deletion and Historical Activity
 
-- LCom Organizations can be effectively soft-deleted through naming conventions rather than physically removed.
+- demoed Organizations can be effectively soft-deleted through naming conventions rather than physically removed.
 - Soft-deletion naming can use variations of `z`, `Z*`, `do not use`, and combinations with inconsistent capitalization.
 - Historical usage remains associated with these organizations.
-- An apparently obsolete or soft-deleted LCom Organization remains part of historical account identity when needed to preserve historical activity.
+- An apparently obsolete or soft-deleted demoed Organization remains part of historical account identity when needed to preserve historical activity.
 - Such organizations cannot simply be excluded from the account universe because of their names.
 
 ### Salesforce Hierarchy
@@ -205,17 +205,17 @@ The term **Customer** is used in two related but distinct ways:
 #### Customer / Ultimate Parent — hierarchy role
 
 - In the Account hierarchy, **Customer = Salesforce Ultimate Parent Account**.
-- Customer in this sense identifies the highest commercial parent used to group Accounts for reporting. It does **not by itself mean that the organization is currently an LCom Customer**.
+- Customer in this sense identifies the highest commercial parent used to group Accounts for reporting. It does **not by itself mean that the organization is currently an demoed Customer**.
 - Several schools or other Accounts can therefore roll up to the same Customer / Ultimate Parent.
 - An individual school with its own active contract, revenue, licenses and product usage is not treated as the Customer when it belongs to a higher-level District or Ultimate Parent.
 
-#### LCom Customer — business status
+#### demoed Customer — business status
 
-- When answering business questions such as **“How many Customers does Learning.com have?”**, an organization is counted as an LCom Customer only when its Customer / Ultimate Parent has **non-zero ARR from active contracts**.
+- When answering business questions such as **“How many Customers does DemoEd.com have?”**, an organization is counted as an demoed Customer only when its Customer / Ultimate Parent has **non-zero ARR from active contracts**.
 - A Customer whose ARR becomes **$0** is considered **churned**.
-- An Account can therefore exist in the Customer / Ultimate Parent hierarchy without currently being counted as an LCom Customer.
-- Public districts and schools that receive licenses and use Learning.com products through a **State Program Deal** are not counted as individual LCom Customers unless they have their own active contracts contributing non-zero ARR. They are license holders/product users under the State Program relationship and cannot themselves churn from that relationship.
-- Consequently, having an Account, holding licenses, or using Learning.com products does not by itself make an organization an LCom Customer.
+- An Account can therefore exist in the Customer / Ultimate Parent hierarchy without currently being counted as an demoed Customer.
+- Public districts and schools that receive licenses and use DemoEd.com products through a **State Program Deal** are not counted as individual demoed Customers unless they have their own active contracts contributing non-zero ARR. They are license holders/product users under the State Program relationship and cannot themselves churn from that relationship.
+- Consequently, having an Account, holding licenses, or using DemoEd.com products does not by itself make an organization an demoed Customer.
 
 ### Salesforce Ownership
 
@@ -235,7 +235,7 @@ The term **Customer** is used in two related but distinct ways:
 
 ### Historical Evolution
 
-- LCom license and usage history extends to 2020 and earlier.
+- demoed license and usage history extends to 2020 and earlier.
 - Before approximately 2024, commercial information was maintained exclusively in NetSuite and was subsequently imported into Salesforce.
 - Since that migration, Salesforce has been the commercial master system.
 - Older imported Accounts and relationships can contain more inconsistencies.
@@ -246,39 +246,39 @@ The term **Customer** is used in two related but distinct ways:
 
 ### Cross-System Identity
 
-- LCom Organizations and Salesforce Accounts do not share a naturally enforced common identifier.
+- demoed Organizations and Salesforce Accounts do not share a naturally enforced common identifier.
 - Their relationship can be established after either record already exists.
-- An organization can first appear in LCom or Salesforce and be linked later.
+- An organization can first appear in demoed or Salesforce and be linked later.
 - The account domain can legitimately contain:
   - organizations linked in both systems;
-  - LCom-only organizations;
+  - demoed-only organizations;
   - Salesforce-only Accounts;
   - similar organizations in both systems without a recognized link;
   - duplicates;
   - potentially incorrect historical links;
   - disagreements about organizational level between systems.
-- A Salesforce school can be linked to an organization represented as a district in LCom, or vice versa.
+- A Salesforce school can be linked to an organization represented as a district in demoed, or vice versa.
 - Cross-system hierarchy disagreement must not automatically be interpreted as proof that one source hierarchy is globally incorrect.
 
 ### NCES
 
 - NCES - https://nces.ed.gov/ - is a federal agency within the Department of Education that currently compiles and standardizes data from all public schools, private schools, and universities in the United States.  In particular, their Common Core of Data - https://nces.ed.gov/ccd/ - is an expansive annual survey that is undertaken every year and publicly published with demographic, funding, geographic, and unique identifier information for all of these entities.  
-- This data feeds into SAlesforce via our provider, Agile Education Marketing - https://agile-ed.com/ - to automatically fill in this information and create Accounts.  LCom use this data to determine many of our business rules around Sales Territory, Sales Owner, Opportunity size, etc.   
-- NCES ID is used in LCom Platform as the unique identifier that ties back Organizations in our product back to their real-world entities.
+- This data feeds into SAlesforce via our provider, Agile Education Marketing - https://agile-ed.com/ - to automatically fill in this information and create Accounts.  demoed use this data to determine many of our business rules around Sales Territory, Sales Owner, Opportunity size, etc.   
+- NCES ID is used in demoed Platform as the unique identifier that ties back Organizations in our product back to their real-world entities.
 
 
 ### District Deals
 
-- Most customers came from District Deals in which the customer pays for and uses Learning.com products itself.
+- Most customers came from District Deals in which the customer pays for and uses DemoEd.com products itself.
 - These customers typically generate revenue, hold licenses, and generate usage.
 - Revenue, license ownership, and usage can coincide in this pattern, but their coincidence is not a universal definition of an Account / Organization role.
 
 ### State Program Deals
 
-- A State Program Deal customer can pay for Learning.com products without necessarily using the products itself.
+- A State Program Deal customer can pay for DemoEd.com products without necessarily using the products itself.
 - A state Department of Education can hold the Salesforce contract and revenue while individual districts receive licenses and generate usage.
 - Districts covered by a State Program Deal can legitimately have licenses and substantial usage with $0 district-level Salesforce contracts and revenue.
-- Conversely, a State Program Deal account can have non-zero revenue but no corresponding LCom licenses or usage.
+- Conversely, a State Program Deal account can have non-zero revenue but no corresponding demoed licenses or usage.
 - Salesforce opportunities with monetary amounts provide the commercial basis for licenses to be created for eligible districts and schools.
 - Salesforce contains a manually maintained flag indicating whether an Account at school or district level is eligible to consume licenses and generate usage under a State Program Deal.
 - The eligibility flag can be turned off when there is no currently active State Program Deal.
@@ -356,25 +356,25 @@ Private organizations can have structures that do not correspond literally to pu
 
 ### Cross-System Identity and Matching
 
-There is no naturally enforced common identifier between LCom Organizations and Salesforce Accounts. Similar organizations can exist in both systems without a recognized link, and records can be linked after creation.
+There is no naturally enforced common identifier between demoed Organizations and Salesforce Accounts. Similar organizations can exist in both systems without a recognized link, and records can be linked after creation.
 
-The source does not define a universal rule for deciding when an unlinked LCom Organization and Salesforce Account represent the same real-world organization.
+The source does not define a universal rule for deciding when an unlinked demoed Organization and Salesforce Account represent the same real-world organization.
 
 ### Conflicting Hierarchy Levels
 
-LCom and Salesforce can disagree about whether an organization is represented as a school or district.
+demoed and Salesforce can disagree about whether an organization is represented as a school or district.
 
-A Salesforce school can be linked to something represented as a district in LCom, or vice versa.
+A Salesforce school can be linked to something represented as a district in demoed, or vice versa.
 
 The source explicitly cautions against interpreting these disagreements as evidence that one entire source hierarchy is wrong. Each system describes organizations for a different business purpose.
 
 ### Physical School vs. Generic School-Level Organization
 
-A school-level LCom Organization is not necessarily a real physical school. Generic school-level organizations can be created to hold usage for district users.
+A school-level demoed Organization is not necessarily a real physical school. Generic school-level organizations can be created to hold usage for district users.
 
 The name patterns `Cloud`, `*cloud`, or similar variants are examples rather than a complete formal classification rule.
 
-### Soft-Deleted LCom Organizations
+### Soft-Deleted demoed Organizations
 
 Soft-deletion is represented through inconsistent naming conventions such as variations of `z`, `Z*`, and `do not use`.
 
@@ -432,9 +432,9 @@ Different organizations, particularly districts in different states or schools i
 
 ## Related Terms
 
-### LCom Platform Organization
+### demoed Platform Organization
 
-The operational/product representation of an organization in LCom Platform. Its hierarchy primarily represents districts and schools and governs licenses and product usage.
+The operational/product representation of an organization in demoed Platform. Its hierarchy primarily represents districts and schools and governs licenses and product usage.
 
 ### Salesforce Account
 
@@ -442,7 +442,7 @@ The commercial representation of an organization in Salesforce. Salesforce is th
 
 ### School
 
-The typical lowest public-education organizational role. A school can generate usage and can also have Salesforce opportunities. A school-level LCom Organization is not necessarily a physical school.
+The typical lowest public-education organizational role. A school can generate usage and can also have Salesforce opportunities. A school-level demoed Organization is not necessarily a physical school.
 
 ### Building
 
@@ -450,11 +450,11 @@ A term that refer to a school.
 
 ### District / Operating Parent
 
-The operational parent role for schools. In LCom Platform, licenses are associated with districts. A district can also be the commercial Customer.
+The operational parent role for schools. In demoed Platform, licenses are associated with districts. A district can also be the commercial Customer.
 
 ### Customer / Ultimate Commercial Parent
 
-The formal Learning.com reporting Customer. Defined as the Salesforce Ultimate Parent Account.
+The formal DemoEd.com reporting Customer. Defined as the Salesforce Ultimate Parent Account.
 
 ### Salesforce Account Owner
 
@@ -466,13 +466,13 @@ The conformed owner used for customer-level reporting. Practically represented b
 
 ### Customer Success Manager (CSM)
 
-A Customer Success Manager (CSM) is a person who helps LCom Customers get the most value from the LCom Platform.
+A Customer Success Manager (CSM) is a person who helps demoed Customers get the most value from the demoed Platform.
 
 For current reporting, CSM is primarily used as a Customer-level reporting/filtering attribute.
 
 ### Ultimate Parent Account
 
-The Salesforce Account at the top of the commercial hierarchy. It defines the formal Customer for Learning.com reporting.
+The Salesforce Account at the top of the commercial hierarchy. It defines the formal Customer for DemoEd.com reporting.
 
 ### Opportunity
 
@@ -480,7 +480,7 @@ A Salesforce commercial object that can be associated with Accounts at different
 
 ### District Deal
 
-A commercial pattern in which the customer generally pays for and uses Learning.com products itself, so revenue, licenses, and usage commonly occur within the same customer organization.
+A commercial pattern in which the customer generally pays for and uses DemoEd.com products itself, so revenue, licenses, and usage commonly occur within the same customer organization.
 
 ### State Program Deal
 
@@ -492,19 +492,19 @@ A manually maintained Salesforce indication that a school- or district-level Acc
 
 ### License
 
-A product entitlement associated with LCom districts. License ownership is related to organizational role but does not independently define Customer or hierarchy level.
+A product entitlement associated with demoed districts. License ownership is related to organizational role but does not independently define Customer or hierarchy level.
 
 ### Product Usage
 
-Consumption of LCom Platform lessons. Usage is predominantly school-level but can occur under districts or generic school-level organizations.
+Consumption of demoed Platform lessons. Usage is predominantly school-level but can occur under districts or generic school-level organizations.
 
 ### Generic School-Level Organization
 
-An LCom Organization created at school level to represent usage for district users rather than necessarily representing a physical school. Names can include `Cloud`, `*cloud`, or similar variants.
+An demoed Organization created at school level to represent usage for district users rather than necessarily representing a physical school. Names can include `Cloud`, `*cloud`, or similar variants.
 
 ### NCES Reference Data
 
-Public and private educational organization information periodically loaded into Salesforce as descriptive Account attributes. It supplements but does not replace Learning.com's operational or commercial hierarchies.
+Public and private educational organization information periodically loaded into Salesforce as descriptive Account attributes. It supplements but does not replace DemoEd.com's operational or commercial hierarchies.
 
 ### HubSpot
 
@@ -523,7 +523,7 @@ An organization that can have licenses or usage without a normal revenue relatio
 graph LR
     A["Account / Organization"]
 
-    A -->|operationally_represented_by| L["LCom Platform Organization"]
+    A -->|operationally_represented_by| L["demoed Platform Organization"]
     A -->|commercially_represented_by| S["Salesforce Account"]
 
     L -->|may_be_linked_to| S

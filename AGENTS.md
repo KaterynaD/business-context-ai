@@ -1,6 +1,6 @@
-## Learning.com Metrics
+## DemoEd.com Metrics
 
-For questions requiring business metric values, use the `lcom_metrics` MCP server instead of generating SQL.
+For questions requiring business metric values, use the `demoed_metrics` MCP server instead of generating SQL.
 
 Before querying metrics:
 
@@ -13,7 +13,7 @@ Do not invent metric names, dimensions, or controlled dimension values.
 
 If `run_metricflow_query` returns `success: false`, use the returned validation error to correct the MCP query and retry.
 
-## Learning.com Account Context
+## DemoEd.com Account Context
 
 For questions about a specific Account / Organization, such as:
 
@@ -22,7 +22,7 @@ For questions about a specific Account / Organization, such as:
 - "Tell me about school XYZ."
 - "Draw a knowledge graph for account XYZ."
 
-use the `get_account` tool from the `lcom_metrics` MCP server instead of generating SQL along with all available metrics for account__name dimension if school and account__district_name if district
+use the `get_account` tool from the `demoed_metrics` MCP server instead of generating SQL along with all available metrics for account__name dimension if school and account__district_name if district
 
 The `get_account` tool accepts:
 

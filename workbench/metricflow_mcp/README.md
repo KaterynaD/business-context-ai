@@ -1,4 +1,4 @@
-# lcom_metrics: Python MCP Server for dbt MetricFlow
+# demoed_metrics: Python MCP Server for dbt MetricFlow
 
 A local **FastMCP** server exposing controlled metric discovery, semantic queries, and structured account lookup to Codex through **MCP `stdio`**.
 
@@ -8,7 +8,7 @@ This README documents the implementation in [metricflow_mcp.py](metricflow_mcp.p
 
 ```mermaid
 flowchart TD
-    A[Codex MCP client] --> B[FastMCP: lcom_metrics]
+    A[Codex MCP client] --> B[FastMCP: demoed_metrics]
     B --> C[get_metrics / get_dimensions]
     C --> D[MetricFlow metadata]
     B --> E[run_metricflow_query]
@@ -88,7 +88,7 @@ Configure your client using one of the existing guides:
 ## Suggested test prompts
 
 ```text
-Use the lcom_metrics tools to list the available metrics.
+Use the demoed_metrics tools to list the available metrics.
 What dimensions are available for arr?
 What was ARR by state for a specified reporting month?
 Find the account named "Example District" and show me any ambiguous matches.
