@@ -6,11 +6,11 @@ This project explores a simple question: **What does an AI assistant need to und
 
 The prototype brings together:
 
-1. **Business ontology and glossary**  concepts, relationships, business rules, exceptions, and source-of-truth guidance.
-2. **Agent Skill**  routes questions to the relevant domain knowledge and tells the agent how to interpret it.
-3. **dbt Semantic Layer / MetricFlow**  provides reusable metric definitions and compiles metric requests into SQL.
-4. **Python MCP server**  exposes validated metric queries and structured account lookup tools to AI clients.
-5. **Codex Desktop and Codex in VS Code**  consume the business context and MCP tools to investigate accounts, explain metrics, and visualize relationships.
+1. **Business ontology and glossary** concepts, relationships, business rules, exceptions, and source-of-truth guidance.
+2. **Agent Skill** routes questions to the relevant domain knowledge and tells the agent how to interpret it.
+3. **dbt Semantic Layer / MetricFlow** provides reusable metric definitions and compiles metric requests into SQL.
+4. **Python MCP server** exposes validated metric queries and structured account lookup tools to AI clients.
+5. **Codex Desktop and Codex in VS Code** consume the business context and MCP tools to investigate accounts, explain metrics, and visualize relationships.
 
 ## Why this matters
 
