@@ -118,6 +118,6 @@ This example illustrates why the distinction between **Preliminary, True, and Ba
 
 ## Reproducing the approach
 
-Start with the [main project overview](../../README.md), then review the [Skill](../../plugins/demoed-business-context/skills/demoed-business-context/SKILL.md), [agent instructions](../../AGENTS.md), and [MCP server README](../../workbench/metricflow_mcp/README.md).
+Start with the [main project overview](../README.md), then review the [Skill](../plugins/demoed-business-context/skills/demoed-business-context/SKILL.md), [agent instructions](../AGENTS.md), and [MCP server README](../workbench/metricflow_mcp/README.md).
 
 The original data and full dbt project are not distributed here. Reproducing this design independently requires your own authorized warehouse, dbt semantic models, account data mapping, and an MCP configuration pointing to them.
