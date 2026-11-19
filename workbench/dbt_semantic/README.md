@@ -1,4 +1,4 @@
-# DemoEd dbt Semantic Layer  MetricFlow project
+# DemoEd dbt Semantic Layer (MetricFlow)
 
 > Technical documentation for the **`dbt_semantic`** project built using dbt 1.12.5 over the DemoEd enterprise data warehouse. This README documents the SQL models, semantic definitions, metrics, dimensions, custom calendar, and local MetricFlow CLI, but not the data warehouse models.
 >
@@ -21,7 +21,7 @@ All  models  use `{{ config(materialized='view', bind=False) }}` based on the ta
 The corresponding YAML snapshots are `account.yml`, `arr_account.yml`, `licenses_account.yml`, `launches_account.yml`, `completions_account.yml`, `custom_month.yml`, and `calendar.yml`. 
 
 
-## Metrics  complete catalog from the September YAML
+## Metrics complete catalog from the September YAML
 
 All metrics are semi-additiveand use **`type: simple`**, **`agg: sum`**, and **`non_additive_dimension: {name: mon_lastday, window_agg: max}`**. This selects the last reporting-month snapshot for a multi-month result instead of summing month-end snapshots across time. 
 
@@ -61,18 +61,18 @@ The metric models define their aggregation time as `mon_lastday`.
 
 ### Categorical dimensions exposed in `account.yml`
 
-- `account__state_code`  state or province code.
-- `account__country`  country.
-- `account__customer_name`  commercial customer display grouping.
-- `account__district_name`  district name.
-- `account__name`  account name.
+- `account__state_code` state or province code.
+- `account__country` country.
+- `account__customer_name` commercial customer display grouping.
+- `account__district_name` district name.
+- `account__name` account name.
 
 These are the five categorical dimensions explicitly marked in that YAML. Other physical attributes present in `vws_account.sql` are **not automatically MetricFlow dimensions**.
 
 ### Time dimensions
 
-- `metric_time`  MetricFlow's global aggregation time dimension.
-- `arr__mon_lastday`, `licenses__mon_lastday`, `launches__mon_lastday`, `completions__mon_lastday`  model time dimensions at **month** granularity.
+- `metric_time` MetricFlow's global aggregation time dimension.
+- `arr__mon_lastday`, `licenses__mon_lastday`, `launches__mon_lastday`, `completions__mon_lastday` model time dimensions at **month** granularity.
 - `custom_month` exposes `mon_firstday` and `mon_lastday` at month granularity; `calendar` exposes `cal_date` at **day** granularity.
 
 For a given metric, confirm which entity-qualified dimensions MetricFlow actually permits with `mf list dimensions --metrics <metric>`. They depend on the semantic graph and installed engine version.
