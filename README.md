@@ -111,7 +111,7 @@ Detailed implementation and environment requirements: [MCP server README](workbe
 - [Codex VS Code extension + local MCP setup](README_Codex_VSCode_MCP_Setup.md)
 - [Repository agent instructions](AGENTS.md)
 
-Both setup guides describe a **local Python MCP server using `stdio`**. Adapt the paths to your machine and use your own authorized data environment. Never commit credentials or local `.env` files.
+
 
 ## Scope and limitations
 
